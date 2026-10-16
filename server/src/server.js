@@ -3,7 +3,8 @@ import { prisma } from "./config/prisma.js";
 import { createApp } from "./app.js";
 const config = loadConfig();
 await prisma.$connect();
-const server = createApp(prisma, config).listen(config.PORT, "127.0.0.1", () =>
+const host = process.env.HOST || "0.0.0.0";
+const server = createApp(prisma, config).listen(config.PORT, host, () =>
   console.log(`COEP API listening on port ${config.PORT}`),
 );
 async function shutdown() {
