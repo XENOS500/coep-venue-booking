@@ -1,0 +1,150 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum Role {
+  REQUESTER
+  APPROVER
+  ADMIN
+}
+
+enum BookingStatus {
+  PENDING
+  APPROVED
+  REJECTED
+  CANCELLED
+}
+
+model Account {
+  id           String          @id @default(uuid()) @db.Uuid
+  name         String          @db.VarChar(120)
+  email        String          @unique @db.VarChar(254)
+  passwordHash String
+  role         Role
+  isActive     Boolean         @default(true)
+  tokenVersion Int             @default(0)
+  createdAt    DateTime        @default(now()) @db.Timestamptz(3)
+  updatedAt    DateTime        @updatedAt @db.Timestamptz(3)
+  bookings     Booking[]
+  assignments  VenueApprover[] @relation("Approver")
+  assigned     VenueApprover[] @relation("Assigner")
+  actions      BookingAction[]
+  auditEvents  AuditEvent[]
+}
+
+model Venue {
+  id               String              @id @default(uuid()) @db.Uuid
+  sourceSerial     Int?                @unique
+  name             String              @db.VarChar(160)
+  buildingName     String?             @db.VarChar(200)
+  floor            String?             @db.VarChar(160)
+  venueType        String?             @db.VarChar(160)
+  roomReferenceRaw String?
+  capacity         Int?
+  features         String?
+  allowedUses      String?
+  imageSourceUrl   String?
+  imageSourceLabel String?
+  imageUrl         String?
+  sourceRaw        Json?
+  reviewNotes      String[]            @default([])
+  isActive         Boolean             @default(true)
+  bookingEnabled   Boolean             @default(false)
+  openingTime      String?             @db.VarChar(5)
+  closingTime      String?             @db.VarChar(5)
+  createdAt        DateTime            @default(now()) @db.Timestamptz(3)
+  updatedAt        DateTime            @updatedAt @db.Timestamptz(3)
+  approvers        VenueApprover[]
+  bookings         Booking[]
+  occurrences      BookingOccurrence[]
+
+  @@index([isActive, buildingName, venueType])
+}
+
+model VenueApprover {
+  venueId    String   @db.Uuid
+  approverId String   @db.Uuid
+  assignedBy String   @db.Uuid
+  assignedAt DateTime @default(now()) @db.Timestamptz(3)
+  venue      Venue    @relation(fields: [venueId], references: [id], onDelete: Restrict)
+  approver   Account  @relation("Approver", fields: [approverId], references: [id], onDelete: Restrict)
+  assigner   Account  @relation("Assigner", fields: [assignedBy], references: [id], onDelete: Restrict)
+
+  @@id([venueId, approverId])
+  @@index([approverId])
+}
+
+model Booking {
+  id             String              @id @default(uuid()) @db.Uuid
+  requesterId    String              @db.Uuid
+  venueId        String              @db.Uuid
+  eventTitle     String              @db.VarChar(160)
+  eventType      String              @db.VarChar(80)
+  contactName    String              @db.VarChar(120)
+  contactEmail   String              @db.VarChar(254)
+  contactPhone   String              @db.VarChar(25)
+  guestCount     Int
+  eventDetails   String              @db.VarChar(2000)
+  purpose        String              @db.VarChar(500)
+  startDate      String              @db.VarChar(10)
+  endDate        String              @db.VarChar(10)
+  weekdays       Int[]               @default([])
+  localStartTime String              @db.VarChar(5)
+  localEndTime   String              @db.VarChar(5)
+  status         BookingStatus       @default(PENDING)
+  createdAt      DateTime            @default(now()) @db.Timestamptz(3)
+  updatedAt      DateTime            @updatedAt @db.Timestamptz(3)
+  requester      Account             @relation(fields: [requesterId], references: [id], onDelete: Restrict)
+  venue          Venue               @relation(fields: [venueId], references: [id], onDelete: Restrict)
+  occurrences    BookingOccurrence[]
+  actions        BookingAction[]
+
+  @@unique([id, venueId], map: "Booking_id_venueId_integrity")
+  @@index([requesterId, status, createdAt])
+  @@index([venueId, status])
+}
+
+model BookingOccurrence {
+  id        String   @id @default(uuid()) @db.Uuid
+  bookingId String   @db.Uuid
+  venueId   String   @db.Uuid
+  startsAt  DateTime @db.Timestamptz(3)
+  endsAt    DateTime @db.Timestamptz(3)
+  booking   Booking  @relation(fields: [bookingId, venueId], references: [id, venueId], onDelete: Restrict, map: "BookingOccurrence_booking_venue_integrity")
+  venue     Venue    @relation(fields: [venueId], references: [id], onDelete: Restrict)
+
+  @@unique([bookingId, startsAt])
+  @@index([venueId, startsAt, endsAt])
+  @@index([bookingId])
+}
+
+model BookingAction {
+  id        String   @id @default(uuid()) @db.Uuid
+  bookingId String   @db.Uuid
+  actorId   String   @db.Uuid
+  action    String   @db.VarChar(32)
+  reason    String?  @db.VarChar(500)
+  createdAt DateTime @default(now()) @db.Timestamptz(3)
+  booking   Booking  @relation(fields: [bookingId], references: [id], onDelete: Restrict)
+  actor     Account  @relation(fields: [actorId], references: [id], onDelete: Restrict)
+
+  @@index([bookingId, createdAt])
+}
+
+model AuditEvent {
+  id         String   @id @default(uuid()) @db.Uuid
+  actorId    String   @db.Uuid
+  entityType String   @db.VarChar(32)
+  entityId   String   @db.Uuid
+  action     String   @db.VarChar(32)
+  changes    Json
+  createdAt  DateTime @default(now()) @db.Timestamptz(3)
+  actor      Account  @relation(fields: [actorId], references: [id], onDelete: Restrict)
+
+  @@index([entityType, entityId, createdAt])
+}
