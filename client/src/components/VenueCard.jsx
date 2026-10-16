@@ -1,10 +1,14 @@
 import { Link } from "react-router-dom";
 import { ArrowUpRight, MapPin, Users, Building2 } from "lucide-react";
 import placeholder from "../assets/venue-placeholder.svg";
+import { bundledVenueImage } from "../services/venueImages";
 export const value = (v) => v || "Not provided";
 
 /** Resolve imported sharing links into URLs that an image element can use. */
 export function displayImageUrl(venue) {
+  const bundled = bundledVenueImage(venue);
+  if (bundled) return bundled;
+
   if (venue.imageUrl) return venue.imageUrl;
 
   const source = venue.imageSourceUrl || "";
@@ -33,6 +37,8 @@ export function VenueImage({ venue, className = "" }) {
     <div className={`venue-image ${className}`}>
       <img
         src={imageUrl || placeholder}
+        loading="lazy"
+        decoding="async"
         alt={
           imageUrl
             ? `${venue.name} venue photo`
