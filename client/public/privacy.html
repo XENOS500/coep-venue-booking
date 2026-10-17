@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="How COEP Spaces handles account information, venue booking records, verification emails and Google API access." />
+  <title>Privacy policy | COEP Spaces</title>
+  <link rel="stylesheet" href="/public-pages.css" />
+</head>
+<body>
+  <a class="skip-link" href="#content">Skip to content</a>
+  <header class="site-header"><a class="brand" href="/about.html">COEP Spaces</a><nav aria-label="Main navigation"><a href="/about.html">About</a><a href="/privacy.html" aria-current="page">Privacy</a><a href="/terms.html">Terms</a><a href="/login">Sign in</a></nav></header>
+  <main id="content">
+    <article class="policy">
+      <p class="eyebrow">Your information</p>
+      <h1>Privacy policy</h1>
+      <p class="meta">Effective date: 17 October 2026</p>
+      <p>COEP Spaces is a campus venue booking application. This policy explains the information used to create accounts, verify email addresses, manage venue requests and provide account support. The application maintainer can be contacted at <a href="mailto:pareekayush500@gmail.com">pareekayush500@gmail.com</a>.</p>
+      <h2>Information we collect</h2>
+      <ul>
+        <li><strong>Accounts:</strong> name, email address, account role, active status, password hash and account timestamps. Verified self-registration also records when email verification completed.</li>
+        <li><strong>Email verification:</strong> pending registration details, a protected representation of the verification code, its expiry, and attempt and resend counters. Passwords are hashed before pending registration is stored.</li>
+        <li><strong>Bookings:</strong> event title and type, contact name, email and phone number, guest count, event details, purpose, venue and schedule, booking status, and decisions or cancellation reasons.</li>
+        <li><strong>Operational records:</strong> account and venue changes, Approver assignments and booking actions, including the responsible account and timestamps. Hosting services may also process IP addresses and request metadata for operation and security.</li>
+      </ul>
+      <h2>How information is used</h2>
+      <p>We use this information to verify email ownership, authenticate users, apply role permissions, check venue availability, prevent conflicting reservations, review requests, preserve booking history and investigate support or security issues.</p>
+      <h2>Gmail API and Google user data</h2>
+      <p>The authorized application sender grants the Gmail API permission <code>gmail.send</code>. The backend uses that permission only to send account verification messages containing the recipient address and verification code. It does not request access to read the sender's inbox, retrieve contacts, or access the recipient's Google account.</p>
+      <p>The sender's OAuth client credentials and refresh token are kept in the backend environment. Short-lived access tokens are held in backend memory. Google processes the recipient address and message content to deliver the email; messages may also remain in the sender's Gmail Sent folder under that account's controls.</p>
+      <p>Google API data is used only for this verification-email feature. It is not sold or used for advertising, profiling, or training general-purpose AI models. Our use of Google API information follows the <a href="https://developers.google.com/terms/api-services-user-data-policy" target="_blank" rel="noreferrer">Google API Services User Data Policy</a>, including its Limited Use requirements.</p>
+      <h2>Who can access information</h2>
+      <p>Requesters can access their own booking details. Approvers can review private requests for their currently assigned venues. The Admin manages accounts, venues and assignments. Shared availability and calendar views limit the information shown according to the signed-in user's permissions.</p>
+      <p>Vercel hosts the frontend, Render runs the backend, Neon stores application records, and Google Gmail delivers verification emails. These providers process information needed for their respective services. The application does not integrate advertising or marketing analytics. Venue photos that use external source links can cause your browser to contact those image providers.</p>
+      <h2>Browser storage and security</h2>
+      <p>Your browser stores your authentication token and basic account details in localStorage so a refresh can restore your session. Logout removes this saved session. Tokens expire after two hours and account changes can revoke them earlier. Use Logout when using a shared device.</p>
+      <p>Passwords are stored as bcrypt hashes and verification codes are protected on the backend. The application avoids logging passwords, OTPs and Google OAuth credentials. Keep your credentials private and report suspected unauthorized access to the maintainer.</p>
+      <h2>Retention, correction and deletion</h2>
+      <p>Account, booking and audit records are retained to support venue administration and historical accountability. The application does not currently provide automatic account deletion or a fixed automatic retention schedule. Verification codes stop working after 10 minutes; expired pending registration records can remain until maintenance removes them.</p>
+      <p>To request access, correction, account closure or deletion, email <a href="mailto:pareekayush500@gmail.com">pareekayush500@gmail.com</a> from your account address. Requests are reviewed by the maintainer; some booking or audit records may need to be retained. Do not include your password or OTP.</p>
+      <p>The sender can revoke the application's Google access through <a href="https://myaccount.google.com/connections" target="_blank" rel="noreferrer">Google Account connections</a>. Revoking access stops Gmail API sending until it is authorized again; it does not automatically delete existing application records or messages.</p>
+      <h2>Changes and contact</h2>
+      <p>Updates to this policy will be published on this page with a revised effective date. For questions about these practices, contact <a href="mailto:pareekayush500@gmail.com">pareekayush500@gmail.com</a>.</p>
+    </article>
+  </main>
+  <footer class="site-footer"><span>COEP Spaces · Venue booking</span><nav aria-label="Information"><a href="/about.html">About</a><a href="/privacy.html">Privacy policy</a><a href="/terms.html">Terms of use</a></nav></footer>
+</body>
+</html>

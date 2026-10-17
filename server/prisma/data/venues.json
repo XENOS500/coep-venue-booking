@@ -1,0 +1,1759 @@
+[
+  {
+    "sourceSerial": 1,
+    "buildingName": "Academic Complex Building",
+    "floor": "1st Floor",
+    "name": "NC 01",
+    "venueType": "Class Room",
+    "roomReferenceRaw": "4",
+    "capacity": 72,
+    "features": null,
+    "imageSourceUrl": "https://coepac-my.sharepoint.com/:i:/g/personal/ksp_comp_coeptech_ac_in/ERduddtqsJtIm4vagtvySXMB-Qy2JgeP6JgyjARhwvcrfA?e=2yJlmo",
+    "imageSourceLabel": "https://coepac-my.sharepoint.com/:i:/g/personal/ksp_comp_coeptech_ac_in/ERduddtqsJtIm4vagtvySXMB-Qy2JgeP6JgyjARhwvcrfA?e=2yJlmo",
+    "allowedUses": null,
+    "sourceRaw": {
+      "A": 1,
+      "B": "Academic Complex Building",
+      "C": "1st Floor",
+      "D": "NC 01",
+      "E": "Class Room",
+      "F": 4,
+      "J": 72,
+      "L": "https://coepac-my.sharepoint.com/:i:/g/personal/ksp_comp_coeptech_ac_in/ERduddtqsJtIm4vagtvySXMB-Qy2JgeP6JgyjARhwvcrfA?e=2yJlmo",
+      "imageHyperlink": "https://coepac-my.sharepoint.com/:i:/g/personal/ksp_comp_coeptech_ac_in/ERduddtqsJtIm4vagtvySXMB-Qy2JgeP6JgyjARhwvcrfA?e=2yJlmo"
+    },
+    "reviewNotes": [
+      "Verify opening hours and booking configuration.",
+      "Review source floor, venue type and room reference; workbook values may be ambiguous.",
+      "Image source is unverified; shared or folder links may need authorized asset selection."
+    ]
+  },
+  {
+    "sourceSerial": 2,
+    "buildingName": "Academic Complex Building",
+    "floor": "1st Floor",
+    "name": "NC 02",
+    "venueType": "Class Room",
+    "roomReferenceRaw": "4",
+    "capacity": 72,
+    "features": null,
+    "imageSourceUrl": "https://coepac-my.sharepoint.com/:i:/g/personal/ksp_comp_coeptech_ac_in/ERduddtqsJtIm4vagtvySXMB-Qy2JgeP6JgyjARhwvcrfA?e=2yJlmo",
+    "imageSourceLabel": "https://coepac-my.sharepoint.com/:i:/g/personal/ksp_comp_coeptech_ac_in/ERduddtqsJtIm4vagtvySXMB-Qy2JgeP6JgyjARhwvcrfA?e=2yJlmo",
+    "allowedUses": null,
+    "sourceRaw": {
+      "A": 2,
+      "B": "Academic Complex Building",
+      "C": "1st Floor",
+      "D": "NC 02",
+      "E": "Class Room",
+      "F": 4,
+      "J": 72,
+      "L": "https://coepac-my.sharepoint.com/:i:/g/personal/ksp_comp_coeptech_ac_in/ERduddtqsJtIm4vagtvySXMB-Qy2JgeP6JgyjARhwvcrfA?e=2yJlmo",
+      "imageHyperlink": "https://coepac-my.sharepoint.com/:i:/g/personal/ksp_comp_coeptech_ac_in/ERduddtqsJtIm4vagtvySXMB-Qy2JgeP6JgyjARhwvcrfA?e=2yJlmo"
+    },
+    "reviewNotes": [
+      "Verify opening hours and booking configuration.",
+      "Review source floor, venue type and room reference; workbook values may be ambiguous.",
+      "Image source is unverified; shared or folder links may need authorized asset selection."
+    ]
+  },
+  {
+    "sourceSerial": 3,
+    "buildingName": "Academic Complex Building",
+    "floor": "1st Floor",
+    "name": "NC 03",
+    "venueType": "Class Room",
+    "roomReferenceRaw": "4",
+    "capacity": 72,
+    "features": null,
+    "imageSourceUrl": "https://coepac-my.sharepoint.com/:i:/g/personal/ksp_comp_coeptech_ac_in/ERduddtqsJtIm4vagtvySXMB-Qy2JgeP6JgyjARhwvcrfA?e=2yJlmo",
+    "imageSourceLabel": "https://coepac-my.sharepoint.com/:i:/g/personal/ksp_comp_coeptech_ac_in/ERduddtqsJtIm4vagtvySXMB-Qy2JgeP6JgyjARhwvcrfA?e=2yJlmo",
+    "allowedUses": null,
+    "sourceRaw": {
+      "A": 3,
+      "B": "Academic Complex Building",
+      "C": "1st Floor",
+      "D": "NC 03",
+      "E": "Class Room",
+      "F": 4,
+      "J": 72,
+      "L": "https://coepac-my.sharepoint.com/:i:/g/personal/ksp_comp_coeptech_ac_in/ERduddtqsJtIm4vagtvySXMB-Qy2JgeP6JgyjARhwvcrfA?e=2yJlmo",
+      "imageHyperlink": "https://coepac-my.sharepoint.com/:i:/g/personal/ksp_comp_coeptech_ac_in/ERduddtqsJtIm4vagtvySXMB-Qy2JgeP6JgyjARhwvcrfA?e=2yJlmo"
+    },
+    "reviewNotes": [
+      "Verify opening hours and booking configuration.",
+      "Review source floor, venue type and room reference; workbook values may be ambiguous.",
+      "Image source is unverified; shared or folder links may need authorized asset selection."
+    ]
+  },
+  {
+    "sourceSerial": 4,
+    "buildingName": "Academic Complex Building",
+    "floor": "1st Floor",
+    "name": "NC 04",
+    "venueType": "Class Room",
+    "roomReferenceRaw": "4",
+    "capacity": 72,
+    "features": null,
+    "imageSourceUrl": "https://coepac-my.sharepoint.com/:i:/g/personal/ksp_comp_coeptech_ac_in/ERduddtqsJtIm4vagtvySXMB-Qy2JgeP6JgyjARhwvcrfA?e=2yJlmo",
+    "imageSourceLabel": "https://coepac-my.sharepoint.com/:i:/g/personal/ksp_comp_coeptech_ac_in/ERduddtqsJtIm4vagtvySXMB-Qy2JgeP6JgyjARhwvcrfA?e=2yJlmo",
+    "allowedUses": null,
+    "sourceRaw": {
+      "A": 4,
+      "B": "Academic Complex Building",
+      "C": "1st Floor",
+      "D": "NC 04",
+      "E": "Class Room",
+      "F": 4,
+      "J": 72,
+      "L": "https://coepac-my.sharepoint.com/:i:/g/personal/ksp_comp_coeptech_ac_in/ERduddtqsJtIm4vagtvySXMB-Qy2JgeP6JgyjARhwvcrfA?e=2yJlmo",
+      "imageHyperlink": "https://coepac-my.sharepoint.com/:i:/g/personal/ksp_comp_coeptech_ac_in/ERduddtqsJtIm4vagtvySXMB-Qy2JgeP6JgyjARhwvcrfA?e=2yJlmo"
+    },
+    "reviewNotes": [
+      "Verify opening hours and booking configuration.",
+      "Review source floor, venue type and room reference; workbook values may be ambiguous.",
+      "Image source is unverified; shared or folder links may need authorized asset selection."
+    ]
+  },
+  {
+    "sourceSerial": 5,
+    "buildingName": "Academic Complex Building",
+    "floor": "2nd floor",
+    "name": "NC 05",
+    "venueType": "Class Room",
+    "roomReferenceRaw": "4",
+    "capacity": 72,
+    "features": "Projector,Mic, Speaker, Wifi",
+    "imageSourceUrl": "https://coepac-my.sharepoint.com/:i:/g/personal/ksp_comp_coeptech_ac_in/EY7XfX1KNQlMkCTxXJQI0BABleLdKq1eLj2eJ2QNIOqH1A?e=GsPQog",
+    "imageSourceLabel": "https://coepac-my.sharepoint.com/:i:/g/personal/ksp_comp_coeptech_ac_in/EY7XfX1KNQlMkCTxXJQI0BABleLdKq1eLj2eJ2QNIOqH1A?e=GsPQog",
+    "allowedUses": "Lecture",
+    "sourceRaw": {
+      "A": 5,
+      "B": "Academic Complex Building",
+      "C": "2nd floor",
+      "D": "NC 05",
+      "E": "Class Room",
+      "F": 4,
+      "J": 72,
+      "K": "Projector,Mic, Speaker, Wifi",
+      "L": "https://coepac-my.sharepoint.com/:i:/g/personal/ksp_comp_coeptech_ac_in/EY7XfX1KNQlMkCTxXJQI0BABleLdKq1eLj2eJ2QNIOqH1A?e=GsPQog",
+      "M": "Lecture",
+      "imageHyperlink": "https://coepac-my.sharepoint.com/:i:/g/personal/ksp_comp_coeptech_ac_in/EY7XfX1KNQlMkCTxXJQI0BABleLdKq1eLj2eJ2QNIOqH1A?e=GsPQog"
+    },
+    "reviewNotes": [
+      "Verify opening hours and booking configuration.",
+      "Review source floor, venue type and room reference; workbook values may be ambiguous.",
+      "Image source is unverified; shared or folder links may need authorized asset selection."
+    ]
+  },
+  {
+    "sourceSerial": 6,
+    "buildingName": "Academic Complex Building",
+    "floor": "2nd floor",
+    "name": "NC 06",
+    "venueType": "Class Room",
+    "roomReferenceRaw": "4",
+    "capacity": 72,
+    "features": "Projector,Mic, Speaker, Wifi",
+    "imageSourceUrl": "https://coepac-my.sharepoint.com/:i:/g/personal/ksp_comp_coeptech_ac_in/EfGEwf925gBLsi9eaW-g3ykBCPS2_nS6iGvPHJ5mHA9sng?e=W93FeG",
+    "imageSourceLabel": "https://coepac-my.sharepoint.com/:i:/g/personal/ksp_comp_coeptech_ac_in/EfGEwf925gBLsi9eaW-g3ykBCPS2_nS6iGvPHJ5mHA9sng?e=W93FeG",
+    "allowedUses": "Lecture",
+    "sourceRaw": {
+      "A": 6,
+      "B": "Academic Complex Building",
+      "C": "2nd floor",
+      "D": "NC 06",
+      "E": "Class Room",
+      "F": 4,
+      "J": 72,
+      "K": "Projector,Mic, Speaker, Wifi",
+      "L": "https://coepac-my.sharepoint.com/:i:/g/personal/ksp_comp_coeptech_ac_in/EfGEwf925gBLsi9eaW-g3ykBCPS2_nS6iGvPHJ5mHA9sng?e=W93FeG",
+      "M": "Lecture",
+      "imageHyperlink": "https://coepac-my.sharepoint.com/:i:/g/personal/ksp_comp_coeptech_ac_in/EfGEwf925gBLsi9eaW-g3ykBCPS2_nS6iGvPHJ5mHA9sng?e=W93FeG"
+    },
+    "reviewNotes": [
+      "Verify opening hours and booking configuration.",
+      "Review source floor, venue type and room reference; workbook values may be ambiguous.",
+      "Image source is unverified; shared or folder links may need authorized asset selection."
+    ]
+  },
+  {
+    "sourceSerial": 7,
+    "buildingName": "Academic Complex Building",
+    "floor": "2nd floor",
+    "name": "NC 07",
+    "venueType": "Class Room",
+    "roomReferenceRaw": "4",
+    "capacity": 72,
+    "features": "Projector,Mic, Speaker, Wifi",
+    "imageSourceUrl": "https://coepac-my.sharepoint.com/:i:/g/personal/ksp_comp_coeptech_ac_in/ERduddtqsJtIm4vagtvySXMB-Qy2JgeP6JgyjARhwvcrfA?e=2yJlmo",
+    "imageSourceLabel": "https://coepac-my.sharepoint.com/:i:/g/personal/ksp_comp_coeptech_ac_in/ERduddtqsJtIm4vagtvySXMB-Qy2JgeP6JgyjARhwvcrfA?e=2yJlmo",
+    "allowedUses": "Lecture",
+    "sourceRaw": {
+      "A": 7,
+      "B": "Academic Complex Building",
+      "C": "2nd floor",
+      "D": "NC 07",
+      "E": "Class Room",
+      "F": 4,
+      "J": 72,
+      "K": "Projector,Mic, Speaker, Wifi",
+      "L": "https://coepac-my.sharepoint.com/:i:/g/personal/ksp_comp_coeptech_ac_in/ERduddtqsJtIm4vagtvySXMB-Qy2JgeP6JgyjARhwvcrfA?e=2yJlmo",
+      "M": "Lecture",
+      "imageHyperlink": "https://coepac-my.sharepoint.com/:i:/g/personal/ksp_comp_coeptech_ac_in/ERduddtqsJtIm4vagtvySXMB-Qy2JgeP6JgyjARhwvcrfA?e=2yJlmo"
+    },
+    "reviewNotes": [
+      "Verify opening hours and booking configuration.",
+      "Review source floor, venue type and room reference; workbook values may be ambiguous.",
+      "Image source is unverified; shared or folder links may need authorized asset selection."
+    ]
+  },
+  {
+    "sourceSerial": 8,
+    "buildingName": "Academic Complex Building",
+    "floor": "2nd floor",
+    "name": "NC 08",
+    "venueType": "Class Room",
+    "roomReferenceRaw": "4",
+    "capacity": 72,
+    "features": null,
+    "imageSourceUrl": "https://coepac-my.sharepoint.com/:i:/g/personal/ksp_comp_coeptech_ac_in/ERduddtqsJtIm4vagtvySXMB-Qy2JgeP6JgyjARhwvcrfA?e=2yJlmo",
+    "imageSourceLabel": "https://coepac-my.sharepoint.com/:i:/g/personal/ksp_comp_coeptech_ac_in/ERduddtqsJtIm4vagtvySXMB-Qy2JgeP6JgyjARhwvcrfA?e=2yJlmo",
+    "allowedUses": null,
+    "sourceRaw": {
+      "A": 8,
+      "B": "Academic Complex Building",
+      "C": "2nd floor",
+      "D": "NC 08",
+      "E": "Class Room",
+      "F": 4,
+      "J": 72,
+      "L": "https://coepac-my.sharepoint.com/:i:/g/personal/ksp_comp_coeptech_ac_in/ERduddtqsJtIm4vagtvySXMB-Qy2JgeP6JgyjARhwvcrfA?e=2yJlmo",
+      "imageHyperlink": "https://coepac-my.sharepoint.com/:i:/g/personal/ksp_comp_coeptech_ac_in/ERduddtqsJtIm4vagtvySXMB-Qy2JgeP6JgyjARhwvcrfA?e=2yJlmo"
+    },
+    "reviewNotes": [
+      "Verify opening hours and booking configuration.",
+      "Review source floor, venue type and room reference; workbook values may be ambiguous.",
+      "Image source is unverified; shared or folder links may need authorized asset selection."
+    ]
+  },
+  {
+    "sourceSerial": 9,
+    "buildingName": "E&TC Extension Building",
+    "floor": "Ground Floor",
+    "name": "Seminar Hall",
+    "venueType": "Seminar Hall",
+    "roomReferenceRaw": "1",
+    "capacity": 60,
+    "features": "TV,  Wifi",
+    "imageSourceUrl": "https://coepac-my.sharepoint.com/:i:/g/personal/ksp_comp_coeptech_ac_in/EXHWOoyhaSxHm7Lao21I5xQBIQJnC9zkwJAsWTPrz0VqbQ?e=iPwYTM",
+    "imageSourceLabel": "https://coepac-my.sharepoint.com/:i:/g/personal/ksp_comp_coeptech_ac_in/EXHWOoyhaSxHm7Lao21I5xQBIQJnC9zkwJAsWTPrz0VqbQ?e=iPwYTM",
+    "allowedUses": "Lecture",
+    "sourceRaw": {
+      "A": 9,
+      "B": "E&TC Extension Building",
+      "C": "Ground Floor ",
+      "D": "Seminar Hall",
+      "E": "Seminar Hall",
+      "F": 1,
+      "J": 60,
+      "K": "TV,  Wifi",
+      "L": "https://coepac-my.sharepoint.com/:i:/g/personal/ksp_comp_coeptech_ac_in/EXHWOoyhaSxHm7Lao21I5xQBIQJnC9zkwJAsWTPrz0VqbQ?e=iPwYTM",
+      "M": "Lecture",
+      "imageHyperlink": "https://coepac-my.sharepoint.com/:i:/g/personal/ksp_comp_coeptech_ac_in/EXHWOoyhaSxHm7Lao21I5xQBIQJnC9zkwJAsWTPrz0VqbQ?e=iPwYTM"
+    },
+    "reviewNotes": [
+      "Verify opening hours and booking configuration.",
+      "Review source floor, venue type and room reference; workbook values may be ambiguous.",
+      "Image source is unverified; shared or folder links may need authorized asset selection."
+    ]
+  },
+  {
+    "sourceSerial": 10,
+    "buildingName": "E&TC Old Building",
+    "floor": "Ground Floor",
+    "name": "Class Room-1",
+    "venueType": "Class Room-1",
+    "roomReferenceRaw": "1",
+    "capacity": 80,
+    "features": null,
+    "imageSourceUrl": null,
+    "imageSourceLabel": null,
+    "allowedUses": null,
+    "sourceRaw": {
+      "A": 10,
+      "B": "E&TC Old Building ",
+      "C": "Ground Floor",
+      "D": "Class Room-1",
+      "E": "Class Room-1",
+      "F": 1,
+      "J": 80,
+      "imageHyperlink": null
+    },
+    "reviewNotes": [
+      "Verify opening hours and booking configuration.",
+      "Review source floor, venue type and room reference; workbook values may be ambiguous."
+    ]
+  },
+  {
+    "sourceSerial": 11,
+    "buildingName": "E&TC Old Building",
+    "floor": "Ground Floor",
+    "name": "Class Room-2",
+    "venueType": "Class Room-2",
+    "roomReferenceRaw": "1",
+    "capacity": 50,
+    "features": null,
+    "imageSourceUrl": null,
+    "imageSourceLabel": null,
+    "allowedUses": null,
+    "sourceRaw": {
+      "A": 11,
+      "B": "E&TC Old Building ",
+      "C": "Ground Floor",
+      "D": "Class Room-2",
+      "E": "Class Room-2",
+      "F": 1,
+      "J": 50,
+      "imageHyperlink": null
+    },
+    "reviewNotes": [
+      "Verify opening hours and booking configuration.",
+      "Review source floor, venue type and room reference; workbook values may be ambiguous."
+    ]
+  },
+  {
+    "sourceSerial": 12,
+    "buildingName": "E&TC Old Building",
+    "floor": "Ground Floor",
+    "name": "Class Room-3",
+    "venueType": "Class Room-3",
+    "roomReferenceRaw": "1",
+    "capacity": 80,
+    "features": null,
+    "imageSourceUrl": null,
+    "imageSourceLabel": null,
+    "allowedUses": null,
+    "sourceRaw": {
+      "A": 12,
+      "B": "E&TC Old Building ",
+      "C": "Ground Floor",
+      "D": "Class Room-3",
+      "E": "Class Room-3",
+      "F": 1,
+      "J": 80,
+      "imageHyperlink": null
+    },
+    "reviewNotes": [
+      "Verify opening hours and booking configuration.",
+      "Review source floor, venue type and room reference; workbook values may be ambiguous."
+    ]
+  },
+  {
+    "sourceSerial": 13,
+    "buildingName": "E&TC Old Building",
+    "floor": "2nd Floor",
+    "name": "Seminar Hall-1",
+    "venueType": "Seminar Hall",
+    "roomReferenceRaw": "1",
+    "capacity": 50,
+    "features": null,
+    "imageSourceUrl": null,
+    "imageSourceLabel": null,
+    "allowedUses": null,
+    "sourceRaw": {
+      "A": 13,
+      "B": "E&TC Old Building ",
+      "C": "2nd Floor",
+      "D": "Seminar Hall-1",
+      "E": "Seminar Hall",
+      "F": 1,
+      "J": 50,
+      "imageHyperlink": null
+    },
+    "reviewNotes": [
+      "Verify opening hours and booking configuration.",
+      "Review source floor, venue type and room reference; workbook values may be ambiguous."
+    ]
+  },
+  {
+    "sourceSerial": 14,
+    "buildingName": "E&TC Old Building",
+    "floor": "2nd Floor",
+    "name": "Seminar Hall-2",
+    "venueType": "Seminar Hall",
+    "roomReferenceRaw": "1",
+    "capacity": 25,
+    "features": null,
+    "imageSourceUrl": null,
+    "imageSourceLabel": null,
+    "allowedUses": null,
+    "sourceRaw": {
+      "A": 14,
+      "B": "E&TC Old Building ",
+      "C": "2nd Floor",
+      "D": "Seminar Hall-2",
+      "E": "Seminar Hall",
+      "F": 1,
+      "J": 25,
+      "imageHyperlink": null
+    },
+    "reviewNotes": [
+      "Verify opening hours and booking configuration.",
+      "Review source floor, venue type and room reference; workbook values may be ambiguous."
+    ]
+  },
+  {
+    "sourceSerial": 15,
+    "buildingName": "Department of Instrumentation and Control Engineering",
+    "floor": "Ground Floor",
+    "name": "Seminar Hall I",
+    "venueType": "Seminar Hall",
+    "roomReferenceRaw": "1",
+    "capacity": 40,
+    "features": "Smart Board, MIC, wifi",
+    "imageSourceUrl": "https://coepac-my.sharepoint.com/:i:/g/personal/kab_instru_coeptech_ac_in/Edav63Kjl2BLiMK7zwACu1gBt1v2VpqIYJvCvYyvpEESGg?e=FfvEO4",
+    "imageSourceLabel": "https://coepac-my.sharepoint.com/:i:/g/personal/kab_instru_coeptech_ac_in/Edav63Kjl2BLiMK7zwACu1gBt1v2VpqIYJvCvYyvpEESGg?e=FfvEO4",
+    "allowedUses": "Lecture",
+    "sourceRaw": {
+      "A": 15,
+      "B": "Department of Instrumentation and Control Engineering",
+      "C": "Ground Floor ",
+      "D": "Seminar Hall I",
+      "E": "Seminar Hall",
+      "F": 1,
+      "J": 40,
+      "K": "Smart Board, MIC, wifi",
+      "L": "https://coepac-my.sharepoint.com/:i:/g/personal/kab_instru_coeptech_ac_in/Edav63Kjl2BLiMK7zwACu1gBt1v2VpqIYJvCvYyvpEESGg?e=FfvEO4",
+      "M": "Lecture",
+      "imageHyperlink": "https://coepac-my.sharepoint.com/:i:/g/personal/kab_instru_coeptech_ac_in/Edav63Kjl2BLiMK7zwACu1gBt1v2VpqIYJvCvYyvpEESGg?e=FfvEO4"
+    },
+    "reviewNotes": [
+      "Verify opening hours and booking configuration.",
+      "Review source floor, venue type and room reference; workbook values may be ambiguous.",
+      "Image source is unverified; shared or folder links may need authorized asset selection."
+    ]
+  },
+  {
+    "sourceSerial": 16,
+    "buildingName": "Department of Instrumentation and Control Engineering",
+    "floor": "2nd Floor",
+    "name": "Class Room",
+    "venueType": "Class Room",
+    "roomReferenceRaw": "1",
+    "capacity": 60,
+    "features": "TV,  Wifi",
+    "imageSourceUrl": "https://coepac-my.sharepoint.com/:i:/g/personal/kab_instru_coeptech_ac_in/EQV193k-k_pNq0ihEG9vBHIBUbOPsCqlm1XRtDJ9Dwq6qw?e=qgBbbB",
+    "imageSourceLabel": "https://coepac-my.sharepoint.com/:i:/g/personal/kab_instru_coeptech_ac_in/EQV193k-k_pNq0ihEG9vBHIBUbOPsCqlm1XRtDJ9Dwq6qw?e=qgBbbB",
+    "allowedUses": "Lecture",
+    "sourceRaw": {
+      "A": 16,
+      "B": "Department of Instrumentation and Control Engineering",
+      "C": "2nd Floor",
+      "D": "Class Room",
+      "E": "Class Room",
+      "F": 1,
+      "J": 60,
+      "K": "TV,  Wifi",
+      "L": "https://coepac-my.sharepoint.com/:i:/g/personal/kab_instru_coeptech_ac_in/EQV193k-k_pNq0ihEG9vBHIBUbOPsCqlm1XRtDJ9Dwq6qw?e=qgBbbB",
+      "M": "Lecture",
+      "imageHyperlink": "https://coepac-my.sharepoint.com/:i:/g/personal/kab_instru_coeptech_ac_in/EQV193k-k_pNq0ihEG9vBHIBUbOPsCqlm1XRtDJ9Dwq6qw?e=qgBbbB"
+    },
+    "reviewNotes": [
+      "Verify opening hours and booking configuration.",
+      "Review source floor, venue type and room reference; workbook values may be ambiguous.",
+      "Image source is unverified; shared or folder links may need authorized asset selection."
+    ]
+  },
+  {
+    "sourceSerial": 17,
+    "buildingName": "Department of Instrumentation and Control Engineering",
+    "floor": "2nd Floor",
+    "name": "Seminar Hall II",
+    "venueType": "Seminar Hall",
+    "roomReferenceRaw": "1",
+    "capacity": 40,
+    "features": "TV,  Wifi",
+    "imageSourceUrl": "https://coepac-my.sharepoint.com/:i:/g/personal/kab_instru_coeptech_ac_in/Edav63Kjl2BLiMK7zwACu1gBt1v2VpqIYJvCvYyvpEESGg?e=yIhjgd",
+    "imageSourceLabel": "https://coepac-my.sharepoint.com/:i:/g/personal/kab_instru_coeptech_ac_in/Edav63Kjl2BLiMK7zwACu1gBt1v2VpqIYJvCvYyvpEESGg?e=yIhjgd",
+    "allowedUses": "Lecture",
+    "sourceRaw": {
+      "A": 17,
+      "B": "Department of Instrumentation and Control Engineering",
+      "C": "2nd Floor",
+      "D": "Seminar Hall II",
+      "E": "Seminar Hall",
+      "F": 1,
+      "J": 40,
+      "K": "TV,  Wifi",
+      "L": "https://coepac-my.sharepoint.com/:i:/g/personal/kab_instru_coeptech_ac_in/Edav63Kjl2BLiMK7zwACu1gBt1v2VpqIYJvCvYyvpEESGg?e=yIhjgd",
+      "M": "Lecture",
+      "imageHyperlink": "https://coepac-my.sharepoint.com/:i:/g/personal/kab_instru_coeptech_ac_in/Edav63Kjl2BLiMK7zwACu1gBt1v2VpqIYJvCvYyvpEESGg?e=yIhjgd"
+    },
+    "reviewNotes": [
+      "Verify opening hours and booking configuration.",
+      "Review source floor, venue type and room reference; workbook values may be ambiguous.",
+      "Image source is unverified; shared or folder links may need authorized asset selection."
+    ]
+  },
+  {
+    "sourceSerial": 18,
+    "buildingName": "Applied Mech",
+    "floor": "basement (Fluid Lab)",
+    "name": "basement (Fluid Lab)",
+    "venueType": "Lab",
+    "roomReferenceRaw": "1",
+    "capacity": 30,
+    "features": null,
+    "imageSourceUrl": "https://coepac-my.sharepoint.com/:i:/g/personal/rz_civil_coeptech_ac_in/EZlKqOfsGOZBu773lI-WxL0Bx_j_E4f_RBBKkQ6F5cNAbA?e=VJxXAO",
+    "imageSourceLabel": "Fluid Mechanics_Basement1.jpg",
+    "allowedUses": null,
+    "sourceRaw": {
+      "A": 18,
+      "B": "Applied Mech",
+      "C": "basement (Fluid Lab)",
+      "D": "basement (Fluid Lab)",
+      "E": "Lab",
+      "F": 1,
+      "J": 30,
+      "L": "Fluid Mechanics_Basement1.jpg",
+      "imageHyperlink": "https://coepac-my.sharepoint.com/:i:/g/personal/rz_civil_coeptech_ac_in/EZlKqOfsGOZBu773lI-WxL0Bx_j_E4f_RBBKkQ6F5cNAbA?e=VJxXAO"
+    },
+    "reviewNotes": [
+      "Verify opening hours and booking configuration.",
+      "Review source floor, venue type and room reference; workbook values may be ambiguous.",
+      "Image source is unverified; shared or folder links may need authorized asset selection."
+    ]
+  },
+  {
+    "sourceSerial": 19,
+    "buildingName": "Applied Mech",
+    "floor": "First Floor",
+    "name": "Class Room 1",
+    "venueType": "Class Room",
+    "roomReferenceRaw": "1",
+    "capacity": 30,
+    "features": "Projector",
+    "imageSourceUrl": "https://coepac-my.sharepoint.com/:i:/g/personal/rz_civil_coeptech_ac_in/EQ45yYvSU_FLtqjnxU6KWV4Bzkr8X-sBYAuiZPSqR7oIuw?e=2vzvLC",
+    "imageSourceLabel": "App Mechanics_First Floor_Classroom.jpg",
+    "allowedUses": null,
+    "sourceRaw": {
+      "A": 19,
+      "B": "Applied Mech",
+      "C": "First Floor",
+      "D": "Class Room 1",
+      "E": "Class Room",
+      "F": 1,
+      "J": 30,
+      "K": "Projector",
+      "L": "App Mechanics_First Floor_Classroom.jpg",
+      "imageHyperlink": "https://coepac-my.sharepoint.com/:i:/g/personal/rz_civil_coeptech_ac_in/EQ45yYvSU_FLtqjnxU6KWV4Bzkr8X-sBYAuiZPSqR7oIuw?e=2vzvLC"
+    },
+    "reviewNotes": [
+      "Verify opening hours and booking configuration.",
+      "Review source floor, venue type and room reference; workbook values may be ambiguous.",
+      "Image source is unverified; shared or folder links may need authorized asset selection."
+    ]
+  },
+  {
+    "sourceSerial": 20,
+    "buildingName": "Applied Mech",
+    "floor": "Applied Mech",
+    "name": "Class Room No 2",
+    "venueType": "Class Room",
+    "roomReferenceRaw": "1",
+    "capacity": 30,
+    "features": null,
+    "imageSourceUrl": "https://coepac-my.sharepoint.com/:i:/g/personal/rz_civil_coeptech_ac_in/EdRBsr2s3IhPuHFaQMwwDEIBE_f5w9myJFxzMR78w5t6VA?e=V187Yl",
+    "imageSourceLabel": "App Mechanics_Classroom2.jpg",
+    "allowedUses": null,
+    "sourceRaw": {
+      "A": 20,
+      "B": "Applied Mech",
+      "C": "Applied Mech",
+      "D": "Class Room No 2",
+      "E": "Class Room",
+      "F": 1,
+      "J": 30,
+      "L": "App Mechanics_Classroom2.jpg",
+      "imageHyperlink": "https://coepac-my.sharepoint.com/:i:/g/personal/rz_civil_coeptech_ac_in/EdRBsr2s3IhPuHFaQMwwDEIBE_f5w9myJFxzMR78w5t6VA?e=V187Yl"
+    },
+    "reviewNotes": [
+      "Verify opening hours and booking configuration.",
+      "Review source floor, venue type and room reference; workbook values may be ambiguous.",
+      "Image source is unverified; shared or folder links may need authorized asset selection."
+    ]
+  },
+  {
+    "sourceSerial": 21,
+    "buildingName": "Applied Mech",
+    "floor": "Applied Mech",
+    "name": "Class Room No 1",
+    "venueType": "Class Room",
+    "roomReferenceRaw": "1",
+    "capacity": 30,
+    "features": null,
+    "imageSourceUrl": "https://coepac-my.sharepoint.com/:i:/g/personal/rz_civil_coeptech_ac_in/Efn_yQ0IgndJjYNtoAMfGaMBQnq8Sw7UQ2_NwNvedNF0qg?e=yH1Ye8",
+    "imageSourceLabel": "App Mechanics Classroom1 (1).jpg",
+    "allowedUses": null,
+    "sourceRaw": {
+      "A": 21,
+      "B": "Applied Mech",
+      "C": "Applied Mech",
+      "D": "Class Room No 1",
+      "E": "Class Room",
+      "F": 1,
+      "J": 30,
+      "L": "App Mechanics Classroom1 (1).jpg",
+      "imageHyperlink": "https://coepac-my.sharepoint.com/:i:/g/personal/rz_civil_coeptech_ac_in/Efn_yQ0IgndJjYNtoAMfGaMBQnq8Sw7UQ2_NwNvedNF0qg?e=yH1Ye8"
+    },
+    "reviewNotes": [
+      "Verify opening hours and booking configuration.",
+      "Review source floor, venue type and room reference; workbook values may be ambiguous.",
+      "Image source is unverified; shared or folder links may need authorized asset selection."
+    ]
+  },
+  {
+    "sourceSerial": 22,
+    "buildingName": "Applied Mech",
+    "floor": "Ground Floor",
+    "name": "Applied Mech Seminar Hall",
+    "venueType": "Seminar Hall",
+    "roomReferenceRaw": "1",
+    "capacity": 40,
+    "features": "Projector",
+    "imageSourceUrl": "https://coepac-my.sharepoint.com/:i:/g/personal/rz_civil_coeptech_ac_in/EY5xqt8xohRKvrTwqK7NES8BlKP0Zx2EMB7aFleOE3TOvQ?e=NNYua5",
+    "imageSourceLabel": "App Mech Ground Floor Seminar Hall.jpg",
+    "allowedUses": null,
+    "sourceRaw": {
+      "A": 22,
+      "B": "Applied Mech",
+      "C": "Ground Floor ",
+      "D": "Applied Mech Seminar Hall",
+      "E": "Seminar Hall",
+      "F": 1,
+      "J": 40,
+      "K": "Projector",
+      "L": "App Mech Ground Floor Seminar Hall.jpg",
+      "imageHyperlink": "https://coepac-my.sharepoint.com/:i:/g/personal/rz_civil_coeptech_ac_in/EY5xqt8xohRKvrTwqK7NES8BlKP0Zx2EMB7aFleOE3TOvQ?e=NNYua5"
+    },
+    "reviewNotes": [
+      "Verify opening hours and booking configuration.",
+      "Review source floor, venue type and room reference; workbook values may be ambiguous.",
+      "Image source is unverified; shared or folder links may need authorized asset selection."
+    ]
+  },
+  {
+    "sourceSerial": 23,
+    "buildingName": "Applied Mech",
+    "floor": "1st Floor",
+    "name": "Class Room No 22",
+    "venueType": "Class Room",
+    "roomReferenceRaw": "1",
+    "capacity": 80,
+    "features": "Projector",
+    "imageSourceUrl": "https://coepac-my.sharepoint.com/:i:/g/personal/rz_civil_coeptech_ac_in/EWhU1HlZ6FBImb7SvX2FS_cBsfIqXoBiTN42TdQ9-YJD7w?e=JUlgVj",
+    "imageSourceLabel": "R22.jpg",
+    "allowedUses": null,
+    "sourceRaw": {
+      "A": 23,
+      "B": "Applied Mech",
+      "C": "1st Floor",
+      "D": "Class Room No 22",
+      "E": "Class Room",
+      "F": 1,
+      "J": 80,
+      "K": "Projector",
+      "L": "R22.jpg",
+      "imageHyperlink": "https://coepac-my.sharepoint.com/:i:/g/personal/rz_civil_coeptech_ac_in/EWhU1HlZ6FBImb7SvX2FS_cBsfIqXoBiTN42TdQ9-YJD7w?e=JUlgVj"
+    },
+    "reviewNotes": [
+      "Verify opening hours and booking configuration.",
+      "Review source floor, venue type and room reference; workbook values may be ambiguous.",
+      "Image source is unverified; shared or folder links may need authorized asset selection."
+    ]
+  },
+  {
+    "sourceSerial": 24,
+    "buildingName": "Mechanical Old Bajaj Building",
+    "floor": "Ground Floor",
+    "name": "ME-001",
+    "venueType": "UG Class Room",
+    "roomReferenceRaw": "1",
+    "capacity": 90,
+    "features": "Projector,Wifi,Mic",
+    "imageSourceUrl": "https://drive.google.com/file/d/11r8JUGcdvTO0ylOI_nn1YEYv9b4CKOKq/view?usp=sharing",
+    "imageSourceLabel": "https://drive.google.com/file/d/11r8JUGcdvTO0ylOI_nn1YEYv9b4CKOKq/view?usp=sharing",
+    "allowedUses": null,
+    "sourceRaw": {
+      "A": 24,
+      "B": "Mechanical Old Bajaj Building",
+      "C": "Ground Floor",
+      "D": "ME-001",
+      "E": "UG Class Room",
+      "F": 1,
+      "J": 90,
+      "K": "Projector,Wifi,Mic",
+      "L": "https://drive.google.com/file/d/11r8JUGcdvTO0ylOI_nn1YEYv9b4CKOKq/view?usp=sharing",
+      "imageHyperlink": "https://drive.google.com/file/d/11r8JUGcdvTO0ylOI_nn1YEYv9b4CKOKq/view?usp=sharing"
+    },
+    "reviewNotes": [
+      "Verify opening hours and booking configuration.",
+      "Review source floor, venue type and room reference; workbook values may be ambiguous.",
+      "Image source is unverified; shared or folder links may need authorized asset selection."
+    ]
+  },
+  {
+    "sourceSerial": 25,
+    "buildingName": "Mechanical Old Bajaj Building",
+    "floor": "Ground Floor",
+    "name": "ME-002",
+    "venueType": "UG Class Room",
+    "roomReferenceRaw": "1",
+    "capacity": 120,
+    "features": "Projector,Wifi,Mic",
+    "imageSourceUrl": "https://drive.google.com/file/d/1xfCJ7OavNoyQdfRC-VI19CAZpL4tOAEL/view?usp=sharing",
+    "imageSourceLabel": "https://drive.google.com/file/d/1xfCJ7OavNoyQdfRC-VI19CAZpL4tOAEL/view?usp=sharing",
+    "allowedUses": null,
+    "sourceRaw": {
+      "A": 25,
+      "B": "Mechanical Old Bajaj Building",
+      "C": "Ground Floor",
+      "D": "ME-002",
+      "E": "UG Class Room",
+      "F": 1,
+      "J": 120,
+      "K": "Projector,Wifi,Mic",
+      "L": "https://drive.google.com/file/d/1xfCJ7OavNoyQdfRC-VI19CAZpL4tOAEL/view?usp=sharing",
+      "imageHyperlink": "https://drive.google.com/file/d/1xfCJ7OavNoyQdfRC-VI19CAZpL4tOAEL/view?usp=sharing"
+    },
+    "reviewNotes": [
+      "Verify opening hours and booking configuration.",
+      "Review source floor, venue type and room reference; workbook values may be ambiguous.",
+      "Image source is unverified; shared or folder links may need authorized asset selection."
+    ]
+  },
+  {
+    "sourceSerial": 26,
+    "buildingName": "Mechanical Old Bajaj Building",
+    "floor": "Ground Floor",
+    "name": "ME-003",
+    "venueType": "UG Class Room",
+    "roomReferenceRaw": "1",
+    "capacity": 120,
+    "features": "Projector,Wifi,Mic",
+    "imageSourceUrl": "https://drive.google.com/file/d/1WSBvMorlthEbWyaCh8JdxRMas7G4kjVu/view?usp=sharing",
+    "imageSourceLabel": "https://drive.google.com/file/d/1WSBvMorlthEbWyaCh8JdxRMas7G4kjVu/view?usp=sharing",
+    "allowedUses": null,
+    "sourceRaw": {
+      "A": 26,
+      "B": "Mechanical Old Bajaj Building",
+      "C": "Ground Floor",
+      "D": "ME-003",
+      "E": "UG Class Room",
+      "F": 1,
+      "J": 120,
+      "K": "Projector,Wifi,Mic",
+      "L": "https://drive.google.com/file/d/1WSBvMorlthEbWyaCh8JdxRMas7G4kjVu/view?usp=sharing",
+      "imageHyperlink": "https://drive.google.com/file/d/1WSBvMorlthEbWyaCh8JdxRMas7G4kjVu/view?usp=sharing"
+    },
+    "reviewNotes": [
+      "Verify opening hours and booking configuration.",
+      "Review source floor, venue type and room reference; workbook values may be ambiguous.",
+      "Image source is unverified; shared or folder links may need authorized asset selection."
+    ]
+  },
+  {
+    "sourceSerial": 27,
+    "buildingName": "Mechanical Old Bajaj Building",
+    "floor": "Ground Floor",
+    "name": "Conference Room",
+    "venueType": "Conference Room",
+    "roomReferenceRaw": "1",
+    "capacity": 15,
+    "features": "TV,Wifi",
+    "imageSourceUrl": null,
+    "imageSourceLabel": null,
+    "allowedUses": null,
+    "sourceRaw": {
+      "A": 27,
+      "B": "Mechanical Old Bajaj Building",
+      "C": "Ground Floor",
+      "D": "Conference Room ",
+      "E": "Conference Room ",
+      "F": 1,
+      "J": 15,
+      "K": "TV,Wifi",
+      "imageHyperlink": null
+    },
+    "reviewNotes": [
+      "Verify opening hours and booking configuration.",
+      "Review source floor, venue type and room reference; workbook values may be ambiguous."
+    ]
+  },
+  {
+    "sourceSerial": 28,
+    "buildingName": "Mechanical Old Bajaj Building",
+    "floor": "1st Floor",
+    "name": "ME-101",
+    "venueType": "Tutorial Room",
+    "roomReferenceRaw": "1",
+    "capacity": 30,
+    "features": "TV,Wifi",
+    "imageSourceUrl": "https://drive.google.com/file/d/1zkM7jOLKgqLJAzCTxcQH-GfV_CBt2ZKh/view?usp=sharing",
+    "imageSourceLabel": "https://drive.google.com/file/d/1zkM7jOLKgqLJAzCTxcQH-GfV_CBt2ZKh/view?usp=sharing",
+    "allowedUses": null,
+    "sourceRaw": {
+      "A": 28,
+      "B": "Mechanical Old Bajaj Building",
+      "C": "1st Floor",
+      "D": "ME-101",
+      "E": "Tutorial Room",
+      "F": 1,
+      "J": 30,
+      "K": "TV,Wifi",
+      "L": "https://drive.google.com/file/d/1zkM7jOLKgqLJAzCTxcQH-GfV_CBt2ZKh/view?usp=sharing",
+      "imageHyperlink": "https://drive.google.com/file/d/1zkM7jOLKgqLJAzCTxcQH-GfV_CBt2ZKh/view?usp=sharing"
+    },
+    "reviewNotes": [
+      "Verify opening hours and booking configuration.",
+      "Review source floor, venue type and room reference; workbook values may be ambiguous.",
+      "Image source is unverified; shared or folder links may need authorized asset selection."
+    ]
+  },
+  {
+    "sourceSerial": 29,
+    "buildingName": "Mechanical Old Bajaj Building",
+    "floor": "2nd Floor",
+    "name": "ME-201",
+    "venueType": "UG Class Room",
+    "roomReferenceRaw": "1",
+    "capacity": 90,
+    "features": "Projector,Wifi,Mic",
+    "imageSourceUrl": "https://drive.google.com/file/d/1E-q97N6HQpt942F05ddKGT_D6nsHbDe_/view?usp=sharing",
+    "imageSourceLabel": "https://drive.google.com/file/d/1E-q97N6HQpt942F05ddKGT_D6nsHbDe_/view?usp=sharing",
+    "allowedUses": null,
+    "sourceRaw": {
+      "A": 29,
+      "B": "Mechanical Old Bajaj Building",
+      "C": "2nd Floor ",
+      "D": "ME-201",
+      "E": "UG Class Room",
+      "F": 1,
+      "J": 90,
+      "K": "Projector,Wifi,Mic",
+      "L": "https://drive.google.com/file/d/1E-q97N6HQpt942F05ddKGT_D6nsHbDe_/view?usp=sharing",
+      "imageHyperlink": "https://drive.google.com/file/d/1E-q97N6HQpt942F05ddKGT_D6nsHbDe_/view?usp=sharing"
+    },
+    "reviewNotes": [
+      "Verify opening hours and booking configuration.",
+      "Review source floor, venue type and room reference; workbook values may be ambiguous.",
+      "Image source is unverified; shared or folder links may need authorized asset selection."
+    ]
+  },
+  {
+    "sourceSerial": 30,
+    "buildingName": "Mechanical Old Bajaj Building",
+    "floor": "2nd floor",
+    "name": "ME-301",
+    "venueType": "Tutorial Room",
+    "roomReferenceRaw": "1",
+    "capacity": 40,
+    "features": "TV,Wifi",
+    "imageSourceUrl": "https://drive.google.com/file/d/1orGoTWToL2cNbFSvNjVnGiJBTqj4-x7p/view?usp=sharing",
+    "imageSourceLabel": "https://drive.google.com/file/d/1orGoTWToL2cNbFSvNjVnGiJBTqj4-x7p/view?usp=sharing",
+    "allowedUses": null,
+    "sourceRaw": {
+      "A": 30,
+      "B": "Mechanical Old Bajaj Building",
+      "C": "2nd floor",
+      "D": "ME-301",
+      "E": "Tutorial Room",
+      "F": 1,
+      "J": 40,
+      "K": "TV,Wifi",
+      "L": "https://drive.google.com/file/d/1orGoTWToL2cNbFSvNjVnGiJBTqj4-x7p/view?usp=sharing",
+      "imageHyperlink": "https://drive.google.com/file/d/1orGoTWToL2cNbFSvNjVnGiJBTqj4-x7p/view?usp=sharing"
+    },
+    "reviewNotes": [
+      "Verify opening hours and booking configuration.",
+      "Review source floor, venue type and room reference; workbook values may be ambiguous.",
+      "Image source is unverified; shared or folder links may need authorized asset selection."
+    ]
+  },
+  {
+    "sourceSerial": 31,
+    "buildingName": "Mechanical New Bajaj Building",
+    "floor": "First Floor",
+    "name": "ME-108",
+    "venueType": "PG",
+    "roomReferenceRaw": "1",
+    "capacity": 36,
+    "features": "No Wifi",
+    "imageSourceUrl": "https://drive.google.com/file/d/1bJecDqhyMaVv0s9jZLgIDUpY1PGb-2qw/view?usp=sharing",
+    "imageSourceLabel": "https://drive.google.com/file/d/1bJecDqhyMaVv0s9jZLgIDUpY1PGb-2qw/view?usp=sharing",
+    "allowedUses": null,
+    "sourceRaw": {
+      "A": 31,
+      "B": "Mechanical New Bajaj Building",
+      "C": "First Floor",
+      "D": "ME-108",
+      "E": "PG ",
+      "F": 1,
+      "J": 36,
+      "K": "No Wifi",
+      "L": "https://drive.google.com/file/d/1bJecDqhyMaVv0s9jZLgIDUpY1PGb-2qw/view?usp=sharing",
+      "imageHyperlink": "https://drive.google.com/file/d/1bJecDqhyMaVv0s9jZLgIDUpY1PGb-2qw/view?usp=sharing"
+    },
+    "reviewNotes": [
+      "Verify opening hours and booking configuration.",
+      "Review source floor, venue type and room reference; workbook values may be ambiguous.",
+      "Image source is unverified; shared or folder links may need authorized asset selection."
+    ]
+  },
+  {
+    "sourceSerial": 32,
+    "buildingName": "Mechanical New Bajaj Building",
+    "floor": "First Floor",
+    "name": "ME-110",
+    "venueType": "PG",
+    "roomReferenceRaw": "1",
+    "capacity": 18,
+    "features": "No Wifi",
+    "imageSourceUrl": "https://drive.google.com/file/d/1zkM7jOLKgqLJAzCTxcQH-GfV_CBt2ZKh/view?usp=sharing",
+    "imageSourceLabel": "https://drive.google.com/file/d/1zkM7jOLKgqLJAzCTxcQH-GfV_CBt2ZKh/view?usp=sharing",
+    "allowedUses": null,
+    "sourceRaw": {
+      "A": 32,
+      "B": "Mechanical New Bajaj Building",
+      "C": "First Floor",
+      "D": "ME-110",
+      "E": "PG ",
+      "F": 1,
+      "J": 18,
+      "K": "No Wifi",
+      "L": "https://drive.google.com/file/d/1zkM7jOLKgqLJAzCTxcQH-GfV_CBt2ZKh/view?usp=sharing",
+      "imageHyperlink": "https://drive.google.com/file/d/1zkM7jOLKgqLJAzCTxcQH-GfV_CBt2ZKh/view?usp=sharing"
+    },
+    "reviewNotes": [
+      "Verify opening hours and booking configuration.",
+      "Review source floor, venue type and room reference; workbook values may be ambiguous.",
+      "Image source is unverified; shared or folder links may need authorized asset selection."
+    ]
+  },
+  {
+    "sourceSerial": 33,
+    "buildingName": "Mechanical New Bajaj Building",
+    "floor": "Second Floor",
+    "name": "ME-201",
+    "venueType": "PG",
+    "roomReferenceRaw": "1",
+    "capacity": 18,
+    "features": "No Wifi",
+    "imageSourceUrl": "https://drive.google.com/file/d/1V56Qmp1d-mKg5U3SGllOvQp56yiec8hE/view?usp=sharing",
+    "imageSourceLabel": "https://drive.google.com/file/d/1V56Qmp1d-mKg5U3SGllOvQp56yiec8hE/view?usp=sharing",
+    "allowedUses": null,
+    "sourceRaw": {
+      "A": 33,
+      "B": "Mechanical New Bajaj Building",
+      "C": "Second Floor",
+      "D": "ME-201",
+      "E": "PG ",
+      "F": 1,
+      "J": 18,
+      "K": "No Wifi",
+      "L": "https://drive.google.com/file/d/1V56Qmp1d-mKg5U3SGllOvQp56yiec8hE/view?usp=sharing",
+      "imageHyperlink": "https://drive.google.com/file/d/1V56Qmp1d-mKg5U3SGllOvQp56yiec8hE/view?usp=sharing"
+    },
+    "reviewNotes": [
+      "Verify opening hours and booking configuration.",
+      "Review source floor, venue type and room reference; workbook values may be ambiguous.",
+      "Image source is unverified; shared or folder links may need authorized asset selection."
+    ]
+  },
+  {
+    "sourceSerial": 34,
+    "buildingName": "Mechanical New Bajaj Building",
+    "floor": "Drawing Hall",
+    "name": "Drawing Hall",
+    "venueType": null,
+    "roomReferenceRaw": "1",
+    "capacity": 180,
+    "features": "Projector",
+    "imageSourceUrl": "https://drive.google.com/file/d/1pcndMBRukVQKbKa81_jG_82Q2cZywHFu/view?usp=sharing",
+    "imageSourceLabel": "https://drive.google.com/file/d/1pcndMBRukVQKbKa81_jG_82Q2cZywHFu/view?usp=sharing",
+    "allowedUses": null,
+    "sourceRaw": {
+      "A": 34,
+      "B": "Mechanical New Bajaj Building",
+      "C": "Drawing Hall",
+      "D": "Drawing Hall",
+      "F": 1,
+      "J": 180,
+      "K": "Projector",
+      "L": "https://drive.google.com/file/d/1pcndMBRukVQKbKa81_jG_82Q2cZywHFu/view?usp=sharing",
+      "imageHyperlink": "https://drive.google.com/file/d/1pcndMBRukVQKbKa81_jG_82Q2cZywHFu/view?usp=sharing"
+    },
+    "reviewNotes": [
+      "Verify opening hours and booking configuration.",
+      "Review source floor, venue type and room reference; workbook values may be ambiguous.",
+      "Image source is unverified; shared or folder links may need authorized asset selection."
+    ]
+  },
+  {
+    "sourceSerial": 35,
+    "buildingName": "K R Natu Building",
+    "floor": "2nd floor",
+    "name": "EE 209",
+    "venueType": "UG Class Room",
+    "roomReferenceRaw": "1",
+    "capacity": 100,
+    "features": "Smart TV",
+    "imageSourceUrl": "https://coepac-my.sharepoint.com/:f:/g/personal/hod_elec_coeptech_ac_in/EnEkuAbrH0ZLp010Gz2blw8BJKSHKQSwvRHkr9dscww7cw?e=gJQuhn",
+    "imageSourceLabel": "EED Classrooms_ 24 4 2025",
+    "allowedUses": null,
+    "sourceRaw": {
+      "A": 35,
+      "B": "K R Natu Building",
+      "C": "2nd floor",
+      "D": "EE 209",
+      "E": "UG Class Room",
+      "F": 1,
+      "J": 100,
+      "K": "Smart TV",
+      "L": "EED Classrooms_ 24 4 2025",
+      "imageHyperlink": "https://coepac-my.sharepoint.com/:f:/g/personal/hod_elec_coeptech_ac_in/EnEkuAbrH0ZLp010Gz2blw8BJKSHKQSwvRHkr9dscww7cw?e=gJQuhn"
+    },
+    "reviewNotes": [
+      "Verify opening hours and booking configuration.",
+      "Review source floor, venue type and room reference; workbook values may be ambiguous.",
+      "Image source is unverified; shared or folder links may need authorized asset selection."
+    ]
+  },
+  {
+    "sourceSerial": 36,
+    "buildingName": "Electrical Engg Dept",
+    "floor": "First Floor Plan",
+    "name": "EE 101",
+    "venueType": "UG Class Room (46 Benches)",
+    "roomReferenceRaw": "1",
+    "capacity": 120,
+    "features": "Projector",
+    "imageSourceUrl": "https://coepac-my.sharepoint.com/:f:/g/personal/hod_elec_coeptech_ac_in/EnEkuAbrH0ZLp010Gz2blw8BJKSHKQSwvRHkr9dscww7cw?e=V3SC0s",
+    "imageSourceLabel": "EED Classrooms_ 24 4 2025",
+    "allowedUses": null,
+    "sourceRaw": {
+      "A": 36,
+      "B": "Electrical Engg Dept",
+      "C": "First Floor Plan",
+      "D": "EE 101",
+      "E": "UG Class Room (46 Benches)",
+      "F": 1,
+      "J": 120,
+      "K": "Projector",
+      "L": "EED Classrooms_ 24 4 2025",
+      "imageHyperlink": "https://coepac-my.sharepoint.com/:f:/g/personal/hod_elec_coeptech_ac_in/EnEkuAbrH0ZLp010Gz2blw8BJKSHKQSwvRHkr9dscww7cw?e=V3SC0s"
+    },
+    "reviewNotes": [
+      "Verify opening hours and booking configuration.",
+      "Review source floor, venue type and room reference; workbook values may be ambiguous.",
+      "Image source is unverified; shared or folder links may need authorized asset selection."
+    ]
+  },
+  {
+    "sourceSerial": 37,
+    "buildingName": "Electrical Engg Dept",
+    "floor": "First Floor Plan",
+    "name": "EE 102",
+    "venueType": "UG Class Room (25 Brnches)",
+    "roomReferenceRaw": "1",
+    "capacity": 50,
+    "features": "Projector",
+    "imageSourceUrl": "https://coepac-my.sharepoint.com/:f:/g/personal/hod_elec_coeptech_ac_in/EnEkuAbrH0ZLp010Gz2blw8BJKSHKQSwvRHkr9dscww7cw?e=V3SC0s",
+    "imageSourceLabel": "EED Classrooms_ 24 4 2025",
+    "allowedUses": null,
+    "sourceRaw": {
+      "A": 37,
+      "B": "Electrical Engg Dept",
+      "C": "First Floor Plan",
+      "D": "EE 102",
+      "E": "UG Class Room (25 Brnches)",
+      "F": 1,
+      "J": 50,
+      "K": "Projector",
+      "L": "EED Classrooms_ 24 4 2025",
+      "imageHyperlink": "https://coepac-my.sharepoint.com/:f:/g/personal/hod_elec_coeptech_ac_in/EnEkuAbrH0ZLp010Gz2blw8BJKSHKQSwvRHkr9dscww7cw?e=V3SC0s"
+    },
+    "reviewNotes": [
+      "Verify opening hours and booking configuration.",
+      "Review source floor, venue type and room reference; workbook values may be ambiguous.",
+      "Image source is unverified; shared or folder links may need authorized asset selection."
+    ]
+  },
+  {
+    "sourceSerial": 38,
+    "buildingName": "Electrical Engg Dept",
+    "floor": "First Floor Plan",
+    "name": "EE 103",
+    "venueType": "PG Class Room (25 Benches)",
+    "roomReferenceRaw": "1",
+    "capacity": 50,
+    "features": "Projector",
+    "imageSourceUrl": "https://coepac-my.sharepoint.com/:f:/g/personal/hod_elec_coeptech_ac_in/EnEkuAbrH0ZLp010Gz2blw8BJKSHKQSwvRHkr9dscww7cw?e=V3SC0s",
+    "imageSourceLabel": "EED Classrooms_ 24 4 2025",
+    "allowedUses": null,
+    "sourceRaw": {
+      "A": 38,
+      "B": "Electrical Engg Dept",
+      "C": "First Floor Plan",
+      "D": "EE 103",
+      "E": "PG Class Room (25 Benches)",
+      "F": 1,
+      "J": 50,
+      "K": "Projector",
+      "L": "EED Classrooms_ 24 4 2025",
+      "imageHyperlink": "https://coepac-my.sharepoint.com/:f:/g/personal/hod_elec_coeptech_ac_in/EnEkuAbrH0ZLp010Gz2blw8BJKSHKQSwvRHkr9dscww7cw?e=V3SC0s"
+    },
+    "reviewNotes": [
+      "Verify opening hours and booking configuration.",
+      "Review source floor, venue type and room reference; workbook values may be ambiguous.",
+      "Image source is unverified; shared or folder links may need authorized asset selection."
+    ]
+  },
+  {
+    "sourceSerial": 39,
+    "buildingName": "Electrical Engg Dept",
+    "floor": "First Floor Plan",
+    "name": "EE 104",
+    "venueType": "PG Class Room (34 Benches)",
+    "roomReferenceRaw": "1",
+    "capacity": 105,
+    "features": "Projector",
+    "imageSourceUrl": "https://coepac-my.sharepoint.com/:f:/g/personal/hod_elec_coeptech_ac_in/EnEkuAbrH0ZLp010Gz2blw8BJKSHKQSwvRHkr9dscww7cw?e=V3SC0s",
+    "imageSourceLabel": "EED Classrooms_ 24 4 2025",
+    "allowedUses": null,
+    "sourceRaw": {
+      "A": 39,
+      "B": "Electrical Engg Dept",
+      "C": "First Floor Plan",
+      "D": "EE 104",
+      "E": "PG Class Room (34 Benches)",
+      "F": 1,
+      "J": 105,
+      "K": "Projector",
+      "L": "EED Classrooms_ 24 4 2025",
+      "imageHyperlink": "https://coepac-my.sharepoint.com/:f:/g/personal/hod_elec_coeptech_ac_in/EnEkuAbrH0ZLp010Gz2blw8BJKSHKQSwvRHkr9dscww7cw?e=V3SC0s"
+    },
+    "reviewNotes": [
+      "Verify opening hours and booking configuration.",
+      "Review source floor, venue type and room reference; workbook values may be ambiguous.",
+      "Image source is unverified; shared or folder links may need authorized asset selection."
+    ]
+  },
+  {
+    "sourceSerial": 40,
+    "buildingName": "Electrical Engg Dept",
+    "floor": "First Floor Plan",
+    "name": "Conference Hall",
+    "venueType": "Conference Hall",
+    "roomReferenceRaw": "1",
+    "capacity": 40,
+    "features": "Projector",
+    "imageSourceUrl": "https://coepac-my.sharepoint.com/:f:/g/personal/hod_elec_coeptech_ac_in/EnEkuAbrH0ZLp010Gz2blw8BJKSHKQSwvRHkr9dscww7cw?e=V3SC0s",
+    "imageSourceLabel": "EED Classrooms_ 24 4 2025",
+    "allowedUses": null,
+    "sourceRaw": {
+      "A": 40,
+      "B": "Electrical Engg Dept",
+      "C": "First Floor Plan",
+      "D": "Conference Hall",
+      "E": "Conference Hall",
+      "F": 1,
+      "J": 40,
+      "K": "Projector",
+      "L": "EED Classrooms_ 24 4 2025",
+      "imageHyperlink": "https://coepac-my.sharepoint.com/:f:/g/personal/hod_elec_coeptech_ac_in/EnEkuAbrH0ZLp010Gz2blw8BJKSHKQSwvRHkr9dscww7cw?e=V3SC0s"
+    },
+    "reviewNotes": [
+      "Verify opening hours and booking configuration.",
+      "Review source floor, venue type and room reference; workbook values may be ambiguous.",
+      "Image source is unverified; shared or folder links may need authorized asset selection."
+    ]
+  },
+  {
+    "sourceSerial": 41,
+    "buildingName": "Civil Engg Dept",
+    "floor": "2nd Floor (Town Planning)",
+    "name": "Class Room I",
+    "venueType": "Class Room",
+    "roomReferenceRaw": "1",
+    "capacity": null,
+    "features": "Projector , Podium",
+    "imageSourceUrl": null,
+    "imageSourceLabel": null,
+    "allowedUses": null,
+    "sourceRaw": {
+      "A": 41,
+      "B": "Civil Engg Dept ",
+      "C": "2nd Floor (Town Planning)",
+      "D": "Class Room I",
+      "E": "Class Room ",
+      "F": 1,
+      "K": "Projector , Podium",
+      "imageHyperlink": null
+    },
+    "reviewNotes": [
+      "Verify opening hours and booking configuration.",
+      "Review source floor, venue type and room reference; workbook values may be ambiguous.",
+      "Capacity is missing; verification required before booking."
+    ]
+  },
+  {
+    "sourceSerial": 42,
+    "buildingName": "Civil Engg Dept",
+    "floor": "1st Floor (Environment Lab)",
+    "name": "Classroom Environment Lab",
+    "venueType": "Class Room",
+    "roomReferenceRaw": "1",
+    "capacity": 25,
+    "features": "Projector",
+    "imageSourceUrl": "https://coepac-my.sharepoint.com/:i:/g/personal/rz_civil_coeptech_ac_in/ESLcPEKH-l5CoJN1yIvNzocBrjh-0QVzLQmP9qC0usUkTA?e=G1itaE",
+    "imageSourceLabel": "Env Classroom.jpeg",
+    "allowedUses": "Lectues",
+    "sourceRaw": {
+      "A": 42,
+      "B": "Civil Engg Dept ",
+      "C": "1st Floor (Environment Lab)",
+      "D": "Classroom Environment Lab",
+      "E": "Class Room ",
+      "F": 1,
+      "J": 25,
+      "K": "Projector",
+      "L": "Env Classroom.jpeg",
+      "M": "Lectues",
+      "imageHyperlink": "https://coepac-my.sharepoint.com/:i:/g/personal/rz_civil_coeptech_ac_in/ESLcPEKH-l5CoJN1yIvNzocBrjh-0QVzLQmP9qC0usUkTA?e=G1itaE"
+    },
+    "reviewNotes": [
+      "Verify opening hours and booking configuration.",
+      "Review source floor, venue type and room reference; workbook values may be ambiguous.",
+      "Image source is unverified; shared or folder links may need authorized asset selection."
+    ]
+  },
+  {
+    "sourceSerial": 43,
+    "buildingName": "Civil Engg Dept",
+    "floor": "(Construction Managment)",
+    "name": "1st Floor (Civil Department)",
+    "venueType": "Class Room",
+    "roomReferenceRaw": "1",
+    "capacity": 20,
+    "features": "projector",
+    "imageSourceUrl": "https://coepac-my.sharepoint.com/:i:/g/personal/rz_civil_coeptech_ac_in/EcYeLlv664BDlHR8lPwY3rIB-ja4kqDdyTUlILZ3_Y11Jg?e=qjodn1",
+    "imageSourceLabel": "CM Classroom.jpeg",
+    "allowedUses": "Lectures",
+    "sourceRaw": {
+      "A": 43,
+      "B": "Civil Engg Dept ",
+      "C": "(Construction Managment)",
+      "D": "1st Floor (Civil Department)",
+      "E": "Class Room ",
+      "F": 1,
+      "J": 20,
+      "K": "projector",
+      "L": "CM Classroom.jpeg",
+      "M": "Lectures",
+      "imageHyperlink": "https://coepac-my.sharepoint.com/:i:/g/personal/rz_civil_coeptech_ac_in/EcYeLlv664BDlHR8lPwY3rIB-ja4kqDdyTUlILZ3_Y11Jg?e=qjodn1"
+    },
+    "reviewNotes": [
+      "Verify opening hours and booking configuration.",
+      "Review source floor, venue type and room reference; workbook values may be ambiguous.",
+      "Image source is unverified; shared or folder links may need authorized asset selection."
+    ]
+  },
+  {
+    "sourceSerial": 44,
+    "buildingName": "Civil Engg Dept",
+    "floor": "Ground Floor",
+    "name": "Room No.7",
+    "venueType": "Class Room",
+    "roomReferenceRaw": "2",
+    "capacity": 60,
+    "features": "projector, wifi",
+    "imageSourceUrl": null,
+    "imageSourceLabel": null,
+    "allowedUses": "Lectures",
+    "sourceRaw": {
+      "A": 44,
+      "B": "Civil Engg Dept ",
+      "C": "Ground Floor",
+      "D": "Room No.7 ",
+      "E": "Class Room ",
+      "F": 2,
+      "J": 60,
+      "K": "projector, wifi",
+      "M": "Lectures",
+      "imageHyperlink": null
+    },
+    "reviewNotes": [
+      "Verify opening hours and booking configuration.",
+      "Review source floor, venue type and room reference; workbook values may be ambiguous."
+    ]
+  },
+  {
+    "sourceSerial": 45,
+    "buildingName": "Civil Engg Dept",
+    "floor": "Ground Floor",
+    "name": "Room No. 8",
+    "venueType": null,
+    "roomReferenceRaw": null,
+    "capacity": 60,
+    "features": "Projector, wifi",
+    "imageSourceUrl": "https://coepac-my.sharepoint.com/:i:/g/personal/rz_civil_coeptech_ac_in/EQwnXxevjRhPuWoyMhswTJ8B_w8tD5xRU0y62wlNu6_1Dg?e=zab5wW",
+    "imageSourceLabel": "R8.jpeg",
+    "allowedUses": null,
+    "sourceRaw": {
+      "A": 45,
+      "B": "Civil Engg Dept ",
+      "C": "Ground Floor",
+      "D": "Room No. 8",
+      "J": 60,
+      "K": "Projector, wifi",
+      "L": "R8.jpeg",
+      "imageHyperlink": "https://coepac-my.sharepoint.com/:i:/g/personal/rz_civil_coeptech_ac_in/EQwnXxevjRhPuWoyMhswTJ8B_w8tD5xRU0y62wlNu6_1Dg?e=zab5wW"
+    },
+    "reviewNotes": [
+      "Verify opening hours and booking configuration.",
+      "Review source floor, venue type and room reference; workbook values may be ambiguous.",
+      "Image source is unverified; shared or folder links may need authorized asset selection."
+    ]
+  },
+  {
+    "sourceSerial": 46,
+    "buildingName": "Civil Engg Dept",
+    "floor": "(Transportation  & Geotech)",
+    "name": "1st floor (Geotech classroom)",
+    "venueType": "Classroom",
+    "roomReferenceRaw": "1",
+    "capacity": 25,
+    "features": "projector",
+    "imageSourceUrl": "https://coepac-my.sharepoint.com/:i:/g/personal/rz_civil_coeptech_ac_in/EVoqbMtKOtdLlnW4LC4-VQMBXJybjjD3eCICLa7gyiCxnA?e=fDvzF7",
+    "imageSourceLabel": "Geotech Classroom.jpeg",
+    "allowedUses": "Lectures",
+    "sourceRaw": {
+      "A": 46,
+      "B": "Civil Engg Dept ",
+      "C": " (Transportation  & Geotech)",
+      "D": "1st floor (Geotech classroom)",
+      "E": "Classroom",
+      "F": 1,
+      "J": 25,
+      "K": "projector",
+      "L": "Geotech Classroom.jpeg",
+      "M": "Lectures",
+      "imageHyperlink": "https://coepac-my.sharepoint.com/:i:/g/personal/rz_civil_coeptech_ac_in/EVoqbMtKOtdLlnW4LC4-VQMBXJybjjD3eCICLa7gyiCxnA?e=fDvzF7"
+    },
+    "reviewNotes": [
+      "Verify opening hours and booking configuration.",
+      "Review source floor, venue type and room reference; workbook values may be ambiguous.",
+      "Image source is unverified; shared or folder links may need authorized asset selection."
+    ]
+  },
+  {
+    "sourceSerial": 47,
+    "buildingName": "Production",
+    "floor": "3D Lab 1st Floor",
+    "name": "Production Class Room 1",
+    "venueType": "Class Room",
+    "roomReferenceRaw": "1",
+    "capacity": null,
+    "features": null,
+    "imageSourceUrl": null,
+    "imageSourceLabel": "3D Lab 1st Floor",
+    "allowedUses": null,
+    "sourceRaw": {
+      "A": 47,
+      "B": "Production ",
+      "C": "3D Lab 1st Floor",
+      "D": "Production Class Room 1",
+      "E": "Class Room ",
+      "F": 1,
+      "L": "3D Lab 1st Floor",
+      "imageHyperlink": null
+    },
+    "reviewNotes": [
+      "Verify opening hours and booking configuration.",
+      "Review source floor, venue type and room reference; workbook values may be ambiguous.",
+      "Capacity is missing; verification required before booking.",
+      "Unresolved image label; no linked asset."
+    ]
+  },
+  {
+    "sourceSerial": 48,
+    "buildingName": "Production",
+    "floor": "1st Floor",
+    "name": "Production Class Room 2",
+    "venueType": "Class Room",
+    "roomReferenceRaw": "1",
+    "capacity": null,
+    "features": null,
+    "imageSourceUrl": null,
+    "imageSourceLabel": null,
+    "allowedUses": null,
+    "sourceRaw": {
+      "A": 48,
+      "B": "Production ",
+      "C": "1st Floor",
+      "D": "Production Class Room 2",
+      "E": "Class Room ",
+      "F": 1,
+      "imageHyperlink": null
+    },
+    "reviewNotes": [
+      "Verify opening hours and booking configuration.",
+      "Review source floor, venue type and room reference; workbook values may be ambiguous.",
+      "Capacity is missing; verification required before booking."
+    ]
+  },
+  {
+    "sourceSerial": 49,
+    "buildingName": "Production",
+    "floor": "1st Floor",
+    "name": "Tutorial Room",
+    "venueType": "Tutorial Room",
+    "roomReferenceRaw": "1",
+    "capacity": null,
+    "features": null,
+    "imageSourceUrl": null,
+    "imageSourceLabel": null,
+    "allowedUses": null,
+    "sourceRaw": {
+      "A": 49,
+      "B": "Production ",
+      "C": "1st Floor",
+      "D": "Tutorial Room",
+      "E": "Tutorial Room",
+      "F": 1,
+      "imageHyperlink": null
+    },
+    "reviewNotes": [
+      "Verify opening hours and booking configuration.",
+      "Review source floor, venue type and room reference; workbook values may be ambiguous.",
+      "Capacity is missing; verification required before booking."
+    ]
+  },
+  {
+    "sourceSerial": 51,
+    "buildingName": "Production",
+    "floor": "Basment",
+    "name": "Production Seminar Hall",
+    "venueType": "Class Room",
+    "roomReferenceRaw": "1",
+    "capacity": null,
+    "features": null,
+    "imageSourceUrl": null,
+    "imageSourceLabel": "Basment",
+    "allowedUses": null,
+    "sourceRaw": {
+      "A": 51,
+      "B": "Production ",
+      "C": "Basment",
+      "D": "Production Seminar Hall",
+      "E": "Class Room ",
+      "F": 1,
+      "L": "Basment",
+      "imageHyperlink": null
+    },
+    "reviewNotes": [
+      "Verify opening hours and booking configuration.",
+      "Review source floor, venue type and room reference; workbook values may be ambiguous.",
+      "Capacity is missing; verification required before booking.",
+      "Unresolved image label; no linked asset."
+    ]
+  },
+  {
+    "sourceSerial": 52,
+    "buildingName": "Production",
+    "floor": "Basment",
+    "name": "Production Basement Class Room",
+    "venueType": "Tutorial Room",
+    "roomReferenceRaw": "1",
+    "capacity": null,
+    "features": null,
+    "imageSourceUrl": null,
+    "imageSourceLabel": null,
+    "allowedUses": null,
+    "sourceRaw": {
+      "A": 52,
+      "B": "Production ",
+      "C": "Basment",
+      "D": "Production Basement Class Room ",
+      "E": "Tutorial Room",
+      "F": 1,
+      "imageHyperlink": null
+    },
+    "reviewNotes": [
+      "Verify opening hours and booking configuration.",
+      "Review source floor, venue type and room reference; workbook values may be ambiguous.",
+      "Capacity is missing; verification required before booking."
+    ]
+  },
+  {
+    "sourceSerial": 53,
+    "buildingName": "Metallurgy Department",
+    "floor": "Ground Floor",
+    "name": "MM-001",
+    "venueType": "Class Room",
+    "roomReferenceRaw": "1",
+    "capacity": 70,
+    "features": null,
+    "imageSourceUrl": null,
+    "imageSourceLabel": null,
+    "allowedUses": null,
+    "sourceRaw": {
+      "A": 53,
+      "B": "Metallurgy Department",
+      "C": "Ground Floor",
+      "D": "MM-001",
+      "E": "Class Room",
+      "F": 1,
+      "J": 70,
+      "imageHyperlink": null
+    },
+    "reviewNotes": [
+      "Verify opening hours and booking configuration.",
+      "Review source floor, venue type and room reference; workbook values may be ambiguous."
+    ]
+  },
+  {
+    "sourceSerial": 54,
+    "buildingName": "Metallurgy Department",
+    "floor": "First Floor",
+    "name": "MM-101",
+    "venueType": "Class Room",
+    "roomReferenceRaw": "1",
+    "capacity": 70,
+    "features": null,
+    "imageSourceUrl": null,
+    "imageSourceLabel": null,
+    "allowedUses": null,
+    "sourceRaw": {
+      "A": 54,
+      "B": "Metallurgy Department",
+      "C": "First Floor",
+      "D": "MM-101",
+      "E": "Class Room",
+      "F": 1,
+      "J": 70,
+      "imageHyperlink": null
+    },
+    "reviewNotes": [
+      "Verify opening hours and booking configuration.",
+      "Review source floor, venue type and room reference; workbook values may be ambiguous."
+    ]
+  },
+  {
+    "sourceSerial": 55,
+    "buildingName": "Metallurgy Department",
+    "floor": "2nd Floor",
+    "name": "MM-201",
+    "venueType": "Class Room",
+    "roomReferenceRaw": "1",
+    "capacity": 80,
+    "features": null,
+    "imageSourceUrl": null,
+    "imageSourceLabel": null,
+    "allowedUses": null,
+    "sourceRaw": {
+      "A": 55,
+      "B": "Metallurgy Department",
+      "C": "2nd Floor",
+      "D": "MM-201",
+      "E": "Class Room",
+      "F": 1,
+      "J": 80,
+      "imageHyperlink": null
+    },
+    "reviewNotes": [
+      "Verify opening hours and booking configuration.",
+      "Review source floor, venue type and room reference; workbook values may be ambiguous."
+    ]
+  },
+  {
+    "sourceSerial": 56,
+    "buildingName": "Metallurgy Department",
+    "floor": "3rd Floor",
+    "name": "MM-301",
+    "venueType": null,
+    "roomReferenceRaw": "1",
+    "capacity": 60,
+    "features": null,
+    "imageSourceUrl": null,
+    "imageSourceLabel": null,
+    "allowedUses": null,
+    "sourceRaw": {
+      "A": 56,
+      "B": "Metallurgy Department",
+      "C": "3rd Floor",
+      "D": "MM-301",
+      "F": 1,
+      "J": 60,
+      "imageHyperlink": null
+    },
+    "reviewNotes": [
+      "Verify opening hours and booking configuration.",
+      "Review source floor, venue type and room reference; workbook values may be ambiguous."
+    ]
+  },
+  {
+    "sourceSerial": 57,
+    "buildingName": "Metallurgy Department",
+    "floor": "3rd Floor",
+    "name": "PG CLASSROOM MM-202",
+    "venueType": "PG Class Room",
+    "roomReferenceRaw": "1",
+    "capacity": 50,
+    "features": null,
+    "imageSourceUrl": null,
+    "imageSourceLabel": null,
+    "allowedUses": null,
+    "sourceRaw": {
+      "A": 57,
+      "B": "Metallurgy Department",
+      "C": "3rd Floor",
+      "D": "PG CLASSROOM MM-202",
+      "E": "PG Class Room",
+      "F": 1,
+      "J": 50,
+      "imageHyperlink": null
+    },
+    "reviewNotes": [
+      "Verify opening hours and booking configuration.",
+      "Review source floor, venue type and room reference; workbook values may be ambiguous."
+    ]
+  },
+  {
+    "sourceSerial": 58,
+    "buildingName": "Metallurgy Department",
+    "floor": "Newly Constructed Classrooms",
+    "name": "MM-EXT-101",
+    "venueType": null,
+    "roomReferenceRaw": null,
+    "capacity": 100,
+    "features": null,
+    "imageSourceUrl": null,
+    "imageSourceLabel": null,
+    "allowedUses": null,
+    "sourceRaw": {
+      "A": 58,
+      "B": "Metallurgy Department",
+      "C": "Newly Constructed Classrooms",
+      "D": "MM-EXT-101",
+      "J": 100,
+      "imageHyperlink": null
+    },
+    "reviewNotes": [
+      "Verify opening hours and booking configuration.",
+      "Review source floor, venue type and room reference; workbook values may be ambiguous."
+    ]
+  },
+  {
+    "sourceSerial": 59,
+    "buildingName": "Metallurgy Department",
+    "floor": "Newly Constructed Classrooms",
+    "name": "MM-EXT-102",
+    "venueType": null,
+    "roomReferenceRaw": null,
+    "capacity": 20,
+    "features": null,
+    "imageSourceUrl": null,
+    "imageSourceLabel": null,
+    "allowedUses": null,
+    "sourceRaw": {
+      "A": 59,
+      "B": "Metallurgy Department",
+      "C": "Newly Constructed Classrooms",
+      "D": "MM-EXT-102",
+      "J": 20,
+      "imageHyperlink": null
+    },
+    "reviewNotes": [
+      "Verify opening hours and booking configuration.",
+      "Review source floor, venue type and room reference; workbook values may be ambiguous."
+    ]
+  },
+  {
+    "sourceSerial": 60,
+    "buildingName": "Metallurgy Department",
+    "floor": "Newly Constructed Classrooms",
+    "name": "MM-EXT-201",
+    "venueType": null,
+    "roomReferenceRaw": null,
+    "capacity": 77,
+    "features": null,
+    "imageSourceUrl": null,
+    "imageSourceLabel": null,
+    "allowedUses": null,
+    "sourceRaw": {
+      "A": 60,
+      "B": "Metallurgy Department",
+      "C": "Newly Constructed Classrooms",
+      "D": "MM-EXT-201",
+      "J": 77,
+      "imageHyperlink": null
+    },
+    "reviewNotes": [
+      "Verify opening hours and booking configuration.",
+      "Review source floor, venue type and room reference; workbook values may be ambiguous."
+    ]
+  },
+  {
+    "sourceSerial": 61,
+    "buildingName": "Metallurgy Department",
+    "floor": "2nd Floor",
+    "name": "MM-EXT-SH1",
+    "venueType": null,
+    "roomReferenceRaw": null,
+    "capacity": 80,
+    "features": null,
+    "imageSourceUrl": null,
+    "imageSourceLabel": null,
+    "allowedUses": null,
+    "sourceRaw": {
+      "A": 61,
+      "B": "Metallurgy Department",
+      "C": "2nd Floor",
+      "D": "MM-EXT-SH1",
+      "J": 80,
+      "imageHyperlink": null
+    },
+    "reviewNotes": [
+      "Verify opening hours and booking configuration.",
+      "Review source floor, venue type and room reference; workbook values may be ambiguous."
+    ]
+  },
+  {
+    "sourceSerial": 62,
+    "buildingName": "Metallurgy Department",
+    "floor": "2nd Floor",
+    "name": "MM-EXT-301",
+    "venueType": null,
+    "roomReferenceRaw": null,
+    "capacity": 110,
+    "features": null,
+    "imageSourceUrl": null,
+    "imageSourceLabel": null,
+    "allowedUses": null,
+    "sourceRaw": {
+      "A": 62,
+      "B": "Metallurgy Department",
+      "C": "2nd Floor",
+      "D": "MM-EXT-301",
+      "J": 110,
+      "imageHyperlink": null
+    },
+    "reviewNotes": [
+      "Verify opening hours and booking configuration.",
+      "Review source floor, venue type and room reference; workbook values may be ambiguous."
+    ]
+  }
+]
