@@ -19,8 +19,9 @@ test(
       "TEST_DATABASE_URL must name a disposable database ending in _test",
     );
     const db = new PrismaClient({ datasources: { db: { url: connection } } });
+    const sentCodes = [];
     async function clear() {
-      await db.$executeRaw`TRUNCATE "BookingAction", "BookingOccurrence", "Booking", "VenueApprover", "AuditEvent", "Venue", "Account" CASCADE`;
+      await db.$executeRaw`TRUNCATE "PendingRegistration", "BookingAction", "BookingOccurrence", "Booking", "VenueApprover", "AuditEvent", "Venue", "Account" CASCADE`;
     }
     await clear();
     const server = createApp(
@@ -29,6 +30,11 @@ test(
       {
         clock: () => new Date("2030-10-16T03:30:00Z"),
         rateLimit: { max: 100 },
+        registrationRateLimit: { max: 100 },
+        emailService: {
+          configured: true,
+          sendOtp: async message => { sentCodes.push(message); },
+        },
       },
     ).listen(0, "127.0.0.1");
     await new Promise((resolve) => server.once("listening", resolve));
@@ -571,6 +577,47 @@ test(
             .role,
           "ADMIN",
         );
+        const secondAdmin = provision("second-admin@example.test", "ADMIN");
+        assert.equal(secondAdmin.status, 1);
+        assert.match(secondAdmin.stderr, /Only one administrator/);
+        assert.equal(
+          await db.account.count({ where: { role: "ADMIN" } }),
+          1,
+        );
+        // The database constraint also protects callers bypassing the script.
+        await assert.rejects(
+          db.account.create({
+            data: {
+              email: "direct-admin@example.test",
+              name: "Second admin",
+              role: "ADMIN",
+              passwordHash,
+            },
+          }),
+          error => error.code === "P2002",
+        );
+        // Updating the single admin's credentials remains supported.
+        assert.equal(provision(accounts.admin.email, "ADMIN").status, 0);
+        assert.equal((await request("/auth/me", { as: "admin" })).status, 401);
+        const relogin = await fetch(`${base}/auth/login`, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            email: accounts.admin.email,
+            password: "Maintenance-test-password-123",
+          }),
+        });
+        assert.equal(relogin.status, 200);
+        accounts.admin.token = (await relogin.json()).data.token;
+        for (const role of ["REQUESTER", "APPROVER"]) {
+          for (const index of [1, 2]) {
+            assert.equal(
+              provision(`${role.toLowerCase()}-${index}@example.test`, role).status,
+              0,
+            );
+          }
+          assert.ok(await db.account.count({ where: { role } }) >= 2);
+        }
         assert.equal(
           provision("maintenance@example.test", "REQUESTER").status,
           0,
@@ -616,5 +663,112 @@ test(
         );
       },
     );
+    await t.test("requester registration accepts email providers and creates no account before OTP", async () => {
+      async function publicPost(path, body) {
+        const response = await fetch(base + path, { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(body) });
+        return { status: response.status, body: await response.json() };
+      }
+      const payload = { name: "New Student", email: "student@coeptech.ac.in", password: "Student-password-123" };
+      for (const email of ["not-an-email", "student@", "student@gmail.com\r\nBcc: other@gmail.com"]) {
+        assert.equal((await publicPost("/auth/register", { ...payload, email })).status, 400);
+      }
+      assert.equal((await publicPost("/auth/register", { ...payload, role: "ADMIN" })).status, 400);
+      assert.equal(sentCodes.length, 0);
+      const started = await publicPost("/auth/register", { ...payload, email: " STUDENT@COEPTECH.AC.IN " });
+      assert.equal(started.status, 202);
+      assert.equal(await db.account.findUnique({ where: { email: payload.email } }), null);
+      assert.equal((await publicPost("/auth/login", { email: payload.email, password: payload.password })).status, 401);
+      const registrationId = started.body.data.registrationId;
+      const code = sentCodes.at(-1).code;
+      assert.match(code, /^\d{6}$/);
+      assert.equal(JSON.stringify(started.body).includes(code), false);
+      const pending = await db.pendingRegistration.findUnique({ where: { id: registrationId } });
+      assert.notEqual(pending.otpHash, code);
+      assert.notEqual(pending.passwordHash, payload.password);
+      const wrong = String((Number(code) + 1) % 1000000).padStart(6, "0");
+      assert.equal((await publicPost("/auth/register/verify", { registrationId, code: wrong })).status, 400);
+      assert.equal((await db.pendingRegistration.findUnique({ where: { id: registrationId } })).attempts, 1);
+      const verification = await Promise.all([1, 2].map(() => publicPost("/auth/register/verify", { registrationId, code })));
+      assert.deepEqual(verification.map(result => result.status).sort(), [201, 400]);
+      const account = await db.account.findUnique({ where: { email: payload.email } });
+      assert.equal(account.role, "REQUESTER");
+      assert.ok(account.emailVerifiedAt);
+      assert.equal(await db.pendingRegistration.findUnique({ where: { id: registrationId } }), null);
+      assert.equal((await publicPost("/auth/login", { email: payload.email, password: payload.password })).status, 200);
+      assert.equal((await publicPost("/auth/register", payload)).status, 409);
+
+      const next = await publicPost("/auth/register", { ...payload, email: "attempts@coeptech.ac.in" });
+      const nextId = next.body.data.registrationId;
+      const nextCode = sentCodes.at(-1).code;
+      const wrongNext = String((Number(nextCode) + 1) % 1000000).padStart(6, "0");
+      assert.equal((await publicPost("/auth/register/resend", { registrationId: nextId })).status, 429);
+      const firstIntent = await publicPost("/auth/register", { ...payload, email: "restart@coeptech.ac.in" });
+      const firstId = firstIntent.body.data.registrationId;
+      await db.pendingRegistration.update({ where: { id: firstId }, data: { sentAt: new Date("2030-10-16T03:28:00Z") } });
+      const restarted = await publicPost("/auth/register", { ...payload, email: "restart@coeptech.ac.in", password: "Different-password-123" });
+      assert.equal(restarted.status, 202);
+      assert.notEqual(restarted.body.data.registrationId, firstId);
+      const restartedCode = sentCodes.at(-1).code;
+      // Another browser cannot use its old challenge to verify a new password.
+      assert.equal((await publicPost("/auth/register/verify", { registrationId: firstId, code: restartedCode })).status, 400);
+      assert.equal((await publicPost("/auth/register/verify", { registrationId: restarted.body.data.registrationId, code: restartedCode })).status, 201);
+      for (const email of ["public.requester@gmail.com", "public.requester@yahoo.com"]) {
+        const started = await publicPost("/auth/register", { ...payload, email });
+        assert.equal(started.status, 202);
+        assert.equal((await publicPost("/auth/register/verify", { registrationId: started.body.data.registrationId, code: sentCodes.at(-1).code })).status, 201);
+        assert.equal((await db.account.findUnique({ where: { email } })).role, "REQUESTER");
+      }
+      for (let attempt = 0; attempt < 5; attempt++) {
+        assert.equal((await publicPost("/auth/register/verify", { registrationId: nextId, code: wrongNext })).status, 400);
+      }
+      assert.equal((await publicPost("/auth/register/verify", { registrationId: nextId, code: nextCode })).status, 400);
+      assert.equal((await db.pendingRegistration.findUnique({ where: { id: nextId } })).attempts, 5);
+      await db.pendingRegistration.update({ where: { id: nextId }, data: { sentAt: new Date("2030-10-16T03:28:00Z") } });
+      assert.equal((await publicPost("/auth/register/resend", { registrationId: nextId })).status, 202);
+      const resent = await db.pendingRegistration.findUnique({ where: { id: nextId } });
+      assert.equal(resent.attempts, 0);
+      assert.equal(resent.sendCount, 2);
+      await db.pendingRegistration.update({ where: { id: nextId }, data: { expiresAt: new Date("2030-10-16T03:29:00Z") } });
+      assert.equal((await publicPost("/auth/register/verify", { registrationId: nextId, code: sentCodes.at(-1).code })).status, 400);
+      await db.pendingRegistration.update({ where: { id: nextId }, data: { sentAt: new Date("2030-10-16T03:28:00Z"), sendCount: 5 } });
+      assert.equal((await publicPost("/auth/register/resend", { registrationId: nextId })).status, 429);
+    });
+    await t.test("only admin can grant, reset or disable approver access; the admin credential stays unchanged", async () => {
+      const before = await db.account.findUnique({ where: { id: accounts.admin.id } });
+      const body = { name: "College Authority", email: "authority@coeptech.ac.in", password: "Authority-password-123" };
+      for (const as of ["requester", "approver"]) {
+        assert.equal((await request("/accounts", { as })).status, 403);
+        assert.equal((await request("/accounts/approvers", { as, method: "POST", body })).status, 403);
+      }
+      assert.equal((await request("/accounts/approvers", { as: "admin", method: "POST", body: { ...body, role: "ADMIN" } })).status, 400);
+      assert.equal((await request("/accounts/approvers", { as: "admin", method: "POST", body: { ...body, email: "authority@gmail.com" } })).status, 400);
+      const created = await request("/accounts/approvers", { as: "admin", method: "POST", body });
+      assert.equal(created.status, 201);
+      assert.equal(created.body.data.role, "APPROVER");
+      assert.equal("passwordHash" in created.body.data, false);
+      assert.equal((await request("/accounts", { as: "admin" })).body.data.some(row => row.id === created.body.data.id), true);
+      const target = await db.account.findUnique({ where: { id: created.body.data.id } });
+      assert.ok(await bcrypt.compare(body.password, target.passwordHash));
+      assert.equal((await request(`/accounts/approvers/${target.id}`, { as: "requester", method: "PATCH", body: { isActive: false } })).status, 403);
+      const reset = await request(`/accounts/approvers/${target.id}`, { as: "admin", method: "PATCH", body: { password: "Reset-authority-password-123", isActive: false } });
+      assert.equal(reset.status, 200);
+      const disabled = await db.account.findUnique({ where: { id: target.id } });
+      assert.equal(disabled.isActive, false);
+      assert.equal(disabled.tokenVersion, 1);
+      assert.ok(await bcrypt.compare("Reset-authority-password-123", disabled.passwordHash));
+      assert.equal((await request(`/accounts/approvers/${accounts.admin.id}`, { as: "admin", method: "PATCH", body: { password: body.password } })).status, 404);
+      const promoted = await request("/accounts/approvers", { as: "admin", method: "POST", body: { ...body, email: "student@coeptech.ac.in" } });
+      assert.equal(promoted.status, 201);
+      const student = await db.account.findUnique({ where: { email: "student@coeptech.ac.in" } });
+      assert.equal(student.role, "APPROVER");
+      assert.equal(student.tokenVersion, 1);
+      const after = await db.account.findUnique({ where: { id: accounts.admin.id } });
+      assert.equal(after.passwordHash, before.passwordHash);
+      assert.equal(after.email, before.email);
+      assert.equal(after.tokenVersion, before.tokenVersion);
+      const audit = await db.auditEvent.findMany({ where: { entityId: target.id } });
+      assert.equal(audit.length, 2);
+      assert.equal(JSON.stringify(audit).includes(body.password), false);
+    });
   },
 );

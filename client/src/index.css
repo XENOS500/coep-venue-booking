@@ -1911,6 +1911,43 @@ footer span {
     display: none;
   }
 }
+.public-info-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 18px;
+  margin-top: 18px;
+  font-size: 12px;
+}
+.public-info-links a {
+  color: var(--green);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+footer .public-info-links {
+  margin-top: 0;
+}
+.registration-page {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+}
+.registration-panel {
+  width: 100%;
+  max-width: 520px;
+}
+.registration-panel form {
+  display: grid;
+  gap: 16px;
+  margin: 24px 0;
+}
+.account-actions {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  align-items: center;
+  margin: 12px 0;
+}
 @media (prefers-reduced-motion: reduce) {
   * {
     animation: none !important;

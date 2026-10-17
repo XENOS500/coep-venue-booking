@@ -9,7 +9,7 @@ client/
   src/
     assets/         # Local illustration used until a venue image is verified
     components/     # Shared layout, accessible form controls and schedule preview
-    context/        # In-memory AuthContext
+    context/        # AuthContext with refresh persistence
     hooks/          # Request loading/error lifecycle
     pages/          # Route-level React screens
     services/       # Axios client and timezone display helpers
@@ -70,7 +70,7 @@ Trusted maintenance locks all venue rows in UUID order before updating accounts.
 
 Roles are independent. REQUESTER owns requests; APPROVER sees requests for current assignments; ADMIN handles venue configuration and assignments. Admins see operational intervals through the calendar, with no contact, purpose, guest count or event details. Shared calendar and availability responses expose times, venue and status only (with an owner's booking link in their own calendar).
 
-JWTs expire after two hours and stay in browser memory. Refreshing requires login. Every authenticated request loads current role, active status and token version from PostgreSQL. Each protected mutation rechecks the actor in the transaction. Self-decisions remain forbidden after role changes. Account provisioning/role changes have no public API.
+JWTs expire after two hours and persist in browser localStorage for refresh restoration. Every authenticated request loads current role, active status and token version from PostgreSQL. Each protected mutation rechecks the actor in the transaction. Self-decisions remain forbidden after role changes. Public registration accepts any OTP-verified email for REQUESTER only; Admin alone provisions, resets or disables Approvers. New Approvers retain college-domain validation. Existing Admin credentials remain valid. See `registration-and-deployment.md` for this approved scope update.
 
 ## Catalog provenance
 
@@ -80,4 +80,4 @@ The checked-in fixture is extracted from `coep_venues.xlsx`, sheet `in`, rows 2â
 
 One reusable navbar derives links from centralized role configuration; route guards complement server enforcement. Dashboard, catalog, details, availability, calendar and profile are shared. Requester, approver and administrator pages are guarded separately. Profile and venue editing use native modal dialogs. Calendar is loaded on demand. It displays IST wall-clock values in FullCalendar UTC mode to avoid relying on the browser timezone or introducing another timezone plugin. API timestamps remain UTC.
 
-No public registration, account management screen, automatic hold expiry, email delivery, partial series editing or priority overrides are implemented.
+Email OTP registration, Admin account management and Gmail API HTTPS delivery are implemented. Gmail tokens are refreshed server-side and cached until shortly before expiry. No email SDK is needed, and OAuth credentials never reach the browser. Automatic hold expiry, partial series editing and priority overrides remain out of scope.

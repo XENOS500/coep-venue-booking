@@ -423,7 +423,7 @@ export function AssignApprovers() {
           </p>
           <p className="muted">
             Only existing active APPROVER accounts can be assigned. Account
-            provisioning and role changes are handled outside the application.
+            creation and access changes are available in Manage accounts.
           </p>
         </aside>
       </div>

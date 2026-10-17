@@ -1,5 +1,23 @@
 import { z } from "zod";
 const text = (max) => z.string().trim().min(1).max(max);
+export const emailAddress = z.string().trim().toLowerCase().email().max(254);
+export const collegeEmail = emailAddress
+  .refine(value => value.split("@")[1] === "coeptech.ac.in", "Use your @coeptech.ac.in email address");
+export const accountPassword = z.string().min(12).max(72)
+  .refine(value => Buffer.byteLength(value, "utf8") <= 72, "Password must not exceed 72 UTF-8 bytes");
+export const registrationSchema = z.object({
+  name: text(120), email: emailAddress, password: accountPassword,
+}).strict();
+export const verifyRegistrationSchema = z.object({
+  registrationId: z.string().uuid(), code: z.string().regex(/^\d{6}$/, "Enter the six-digit code"),
+}).strict();
+export const resendRegistrationSchema = z.object({ registrationId: z.string().uuid() }).strict();
+export const approverCreateSchema = z.object({
+  name: text(120), email: collegeEmail, password: accountPassword,
+}).strict();
+export const approverPatchSchema = z.object({
+  isActive: z.boolean().optional(), password: accountPassword.optional(),
+}).strict().refine(value => Object.keys(value).length > 0, "No changes supplied");
 export const uuid = z.string().uuid();
 export const date = z
   .string()

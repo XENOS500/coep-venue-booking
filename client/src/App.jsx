@@ -2,6 +2,8 @@ import { Navigate, Outlet, Route, Routes, Link } from "react-router-dom";
 import { useAuth } from "./context/AuthContext";
 import { Layout } from "./components/Layout";
 import { Login } from "./pages/Login";
+import { Register } from "./pages/Register";
+import { ManageAccounts } from "./pages/Accounts";
 import { Dashboard } from "./pages/Dashboard";
 import { Catalog, VenueDetails } from "./pages/Catalog";
 import { BookingForm } from "./pages/BookingForm";
@@ -38,6 +40,7 @@ export default function App() {
   return (
     <Routes>
       <Route path="/login" element={<Login />} />
+      <Route path="/register" element={<Register />} />
       <Route element={<Guard />}>
         <Route element={<Layout />}>
           <Route index element={<Navigate to="/dashboard" replace />} />
@@ -68,6 +71,7 @@ export default function App() {
           </Route>
           <Route element={<Guard roles={["ADMIN"]} />}>
             <Route path="admin/venues" element={<ManageVenues />} />
+            <Route path="admin/accounts" element={<ManageAccounts />} />
             <Route path="admin/approvers" element={<AssignApprovers />} />
           </Route>
           <Route

@@ -7,6 +7,10 @@ export function loadConfig(env = process.env) {
       PORT: z.coerce.number().int().min(1).max(65535).default(4000),
       CLIENT_ORIGIN: z.string().url().default("http://127.0.0.1:5173"),
       TRUST_PROXY: z.enum(["0", "1"]).default("0"),
+      GMAIL_CLIENT_ID: z.string().min(1).optional(),
+      GMAIL_CLIENT_SECRET: z.string().min(1).optional(),
+      GMAIL_REFRESH_TOKEN: z.string().min(1).optional(),
+      GMAIL_SENDER_EMAIL: z.string().email().optional(),
     })
     .safeParse(env);
   if (!parsed.success)

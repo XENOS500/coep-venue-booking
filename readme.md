@@ -2,7 +2,7 @@
 
 Full-stack campus venue booking built from `agent/PRD.md` v2.0. React/Vite frontend in `client/`; Express/Prisma/PostgreSQL backend in `server/`.
 
-The application includes login, a dashboard, the real 61-venue catalog and details, availability checks, single and recurring requests, requester history/cancellation, assigned approver decisions/history, a privacy-filtered calendar, venue administration and approver assignment. Roles do not inherit permissions. Accounts are provisioned through trusted maintenance, with no signup or account-management API.
+The application includes login, requester signup with Gmail API email OTP verification, the real 61-venue catalog, booking requests, assigned approver decisions, calendar, venue administration and approver assignment. Requesters may use any valid email provider. Roles do not inherit permissions. The single Admin is bootstrapped through trusted maintenance; Admin can create and manage Approvers in Manage accounts. Existing Admin credentials are preserved. See [Gmail sender setup](docs/gmail-setup.md) and [registration and production deployment](docs/registration-and-deployment.md).
 
 ## Setup
 
@@ -38,7 +38,7 @@ npm run account:provision -w server
 Remove-Item Env:ACCOUNT_PASSWORD
 ```
 
-Repeat with `APPROVER` and `REQUESTER` to provision real accounts. An existing email updates that account and revokes its old sessions. Optional `ACCOUNT_ACTIVE=false` deactivates it; the script prevents removal of the last active admin. Clear provisioning variables after use. Deliver credentials through an authorized private channel. Account lifecycle changes are operational tasks, not ADMIN web permissions.
+After bootstrapping Admin, use Manage accounts to create Approvers with college emails and assign them to venues. Requesters register using any valid email and OTP verification. Trusted maintenance can still provision accounts; updating an existing email revokes its old sessions. Only one Admin is allowed and cannot be deactivated or demoted. Clear provisioning variables after use and deliver authority credentials privately. Configure Gmail API before public signup; existing logins remain usable without email delivery.
 
 ### Start development
 
@@ -52,7 +52,7 @@ npm run dev:server
 npm run dev:client
 ```
 
-Open [COEP Spaces](http://127.0.0.1:5173). Vite proxies `/api` to port 4000. Use the exact configured hostname for trusted-origin CORS. Sessions remain in memory, so refreshing or reopening the page requires login.
+Open [COEP Spaces](http://127.0.0.1:5173). Vite proxies `/api` to port 4000. Use the exact configured hostname for trusted-origin CORS. Sessions survive refresh on the same browser, but JWTs still expire after two hours and are revoked by account changes.
 
 As ADMIN, verify a venue's capacity and opening hours under Manage Venues, enable booking, and assign an existing active APPROVER under Assign Approvers. Only then can REQUESTER accounts submit requests. The six missing-capacity venues remain visible but unavailable until verified. Source image links remain unverified; an authorized directly embeddable HTTPS image URL can be entered separately.
 

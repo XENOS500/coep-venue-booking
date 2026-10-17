@@ -1,5 +1,5 @@
 import { createContext, useContext, useEffect, useState } from "react";
-import { post, setToken } from "../services/api";
+import { signIn, setToken } from "../services/api";
 
 const AuthContext = createContext(null);
 const AUTH_STORAGE_KEY = "coep-venue-booking.auth";
@@ -33,7 +33,7 @@ export function AuthProvider({ children }) {
     return () => window.removeEventListener("session-expired", logout);
   }, []);
   async function login(credentials) {
-    const result = await post("/auth/login", credentials);
+    const result = await signIn(credentials);
     setToken(result.token);
     setAccount(result.account);
     window.localStorage.setItem(

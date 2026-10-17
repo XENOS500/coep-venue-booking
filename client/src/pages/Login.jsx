@@ -1,12 +1,22 @@
-import { useState } from "react";
-import { Navigate } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { Link, Navigate } from "react-router-dom";
 import { Building2, ArrowRight, LockKeyhole } from "lucide-react";
 import { useAuth } from "../context/AuthContext";
 import { Field, FormError } from "../components/UI";
+import { PublicInfoLinks } from "../components/PublicInfoLinks";
 export function Login() {
   const { account, login } = useAuth(),
     [error, setError] = useState(null),
-    [busy, setBusy] = useState(false);
+    [busy, setBusy] = useState(false),
+    [slow, setSlow] = useState(false);
+  useEffect(() => {
+    if (!busy) {
+      setSlow(false);
+      return;
+    }
+    const timer = window.setTimeout(() => setSlow(true), 10000);
+    return () => window.clearTimeout(timer);
+  }, [busy]);
   if (account) return <Navigate to="/dashboard" replace />;
   async function submit(e) {
     e.preventDefault();
@@ -84,19 +94,29 @@ export function Login() {
               />
             </Field>
             <FormError error={error} />
+            {busy && slow && (
+              <p className="muted" role="status">
+                Connecting is taking longer than usual. Please keep this page
+                open while we sign you in.
+              </p>
+            )}
             <button className="button" disabled={busy}>
               {busy ? "Signing in…" : "Sign in to your workspace"}
               <ArrowRight size={18} />
             </button>
           </form>
           <p className="login-help">
+            <Link to="/register" className="text-link">Register as Requester</Link>
+            <br />
             Need access or help signing in?
             <br />
             Contact your institution’s authorized administrator.
           </p>
           <small className="muted">
-            Your session stays in memory. Sign in again after refreshing.
+            Your session is saved on this browser. Use Logout when you finish
+            on a shared device.
           </small>
+          <PublicInfoLinks />
         </div>
       </section>
     </div>

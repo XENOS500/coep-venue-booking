@@ -7,7 +7,14 @@ Successful objects use `{data:object}`. Paginated venue/booking lists use `{data
 | Method and path | Role / response |
 |---|---|
 | `GET /health` | Public service/database liveness; no configuration details |
+| `GET /health/live` | Public lightweight liveness; no database query |
 | `POST /auth/login` | `{email,password}` → `{data:{token,account}}` |
+| `POST /auth/register` | Public, any valid email; `{name,email,password}` → 202 `{data:{registrationId,email,expiresInSeconds,resendAfterSeconds}}` |
+| `POST /auth/register/resend` | Public; `{registrationId}` → 202; cooldown and hourly email limits |
+| `POST /auth/register/verify` | Public; `{registrationId,code}` → 201 after creating REQUESTER only |
+| `GET /accounts` | ADMIN; paginated Approver accounts; `page,limit,search`; no hashes |
+| `POST /accounts/approvers` | ADMIN; `{name,email,password}`; create or explicitly promote a Requester; college email required |
+| `PATCH /accounts/approvers/:id` | ADMIN; `{isActive?,password?}`; revoke sessions and audit; cannot target Admin |
 | `GET /auth/me` | Current active account: id, name, email, role |
 | `GET /venues` | All roles; `search,building,type,capacity,page,limit` |
 | `GET /venues/:id` | All roles; source data, booking eligibility and active approver count |

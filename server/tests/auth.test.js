@@ -98,7 +98,7 @@ test("authentication and authorization are independently enforced over HTTP", as
   assert.equal((await request("/auth/me", { headers: auth })).status, 401);
   assert.equal(
     (await request("/auth/register", { method: "POST" })).status,
-    401,
+    400, // Public requester signup still requires valid name/email/password.
   );
   assert.equal(
     (

@@ -28,6 +28,7 @@ model Account {
   role         Role
   isActive     Boolean         @default(true)
   tokenVersion Int             @default(0)
+  emailVerifiedAt DateTime?    @db.Timestamptz(3)
   createdAt    DateTime        @default(now()) @db.Timestamptz(3)
   updatedAt    DateTime        @updatedAt @db.Timestamptz(3)
   bookings     Booking[]
@@ -35,6 +36,21 @@ model Account {
   assigned     VenueApprover[] @relation("Assigner")
   actions      BookingAction[]
   auditEvents  AuditEvent[]
+}
+
+model PendingRegistration {
+  id           String   @id @default(uuid()) @db.Uuid
+  email        String   @unique @db.VarChar(254)
+  name         String   @db.VarChar(120)
+  passwordHash String
+  otpHash      String   @db.VarChar(64)
+  expiresAt    DateTime @db.Timestamptz(3)
+  attempts     Int      @default(0)
+  sentAt       DateTime @db.Timestamptz(3)
+  sendCount    Int      @default(1)
+  windowStart  DateTime @db.Timestamptz(3)
+
+  @@index([expiresAt])
 }
 
 model Venue {

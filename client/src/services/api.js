@@ -1,6 +1,6 @@
 import axios from "axios";
 export const api = axios.create({
-  baseURL: import.meta.env.VITE_API_URL || "/api/v1",
+  baseURL: import.meta.env?.VITE_API_URL || "/api/v1",
   timeout: 20000,
 });
 let token;
@@ -24,8 +24,15 @@ api.interceptors.response.use(
 );
 export const errorMessage = (e) =>
   e.response?.data?.error?.message ||
-  (e.code === "ERR_NETWORK"
+  (["ECONNABORTED", "ETIMEDOUT"].includes(e.code)
+    ? "The server took too long to respond. Please try again."
+    : e.code === "ERR_NETWORK"
     ? "Cannot reach the API. Check that the server is running."
     : e.message || "Something went wrong.");
 export const get = async (url, params) => (await api.get(url, { params })).data;
 export const post = async (url, data) => (await api.post(url, data)).data.data;
+
+// Free hosting can take about a minute to wake after an idle period. Allow
+// this only for login; never automatically replay credentials or mutations.
+export const signIn = async (credentials) =>
+  (await api.post("/auth/login", credentials, { timeout: 120000 })).data.data;

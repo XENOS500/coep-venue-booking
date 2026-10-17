@@ -31,6 +31,18 @@ try {
         where: { email: input.ACCOUNT_EMAIL },
       });
       const isActive = input.ACCOUNT_ACTIVE === "true";
+      if (input.ACCOUNT_ROLE === "ADMIN") {
+        const otherAdmin = await tx.account.findFirst({
+          where: { role: "ADMIN", email: { not: input.ACCOUNT_EMAIL } },
+          select: { id: true },
+        });
+        if (otherAdmin)
+          throw new Error(
+            "Only one administrator account is allowed. Update the existing administrator instead; REQUESTER and APPROVER accounts can have multiple users.",
+          );
+        if (!existing && !isActive)
+          throw new Error("The administrator must be created as active.");
+      }
       if (
         existing?.role === "ADMIN" &&
         existing.isActive &&

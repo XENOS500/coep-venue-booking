@@ -19,7 +19,9 @@ import {
 } from "lucide-react";
 import { useAuth } from "../context/AuthContext";
 import { Modal } from "./UI";
+import { PublicInfoLinks } from "./PublicInfoLinks";
 export const navigation = [
+  { to: "/admin/accounts", label: "Manage accounts", icon: UserRoundCheck, roles: ["ADMIN"] },
   { to: "/dashboard", label: "Overview", icon: LayoutDashboard },
   { to: "/venues", label: "Venue catalog", icon: Building2 },
   { to: "/availability", label: "Check availability", icon: SearchCheck },
@@ -156,6 +158,7 @@ export function Layout() {
         <footer>
           COEP Technological University{" "}
           <span>Thoughtfully shared. Seamlessly booked.</span>
+          <PublicInfoLinks />
         </footer>
       </div>
       {profile && (
