@@ -204,6 +204,20 @@ textarea:focus-visible {
   display: flex;
   flex-direction: column;
   z-index: 30;
+  height: 100dvh;
+  overflow: hidden;
+}
+.sidebar > .brand {
+  flex-shrink: 0;
+}
+.sidebar-scroll {
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  scrollbar-width: thin;
+  padding: 0 3px 12px;
+  margin: 0 -3px;
 }
 .brand {
   display: flex;
@@ -271,15 +285,15 @@ nav a.active svg {
   stroke-width: 2.3;
 }
 .sidebar-bottom {
-  margin-top: auto;
-  padding-top: 30px;
+  flex-shrink: 0;
+  background: white;
 }
 .sidebar-note {
   background: #f4f5ec;
   border: 1px solid #eceee1;
   border-radius: 9px;
   padding: 17px 14px;
-  margin-bottom: 25px;
+  margin: 24px 0 0;
 }
 .tiny-label {
   font-size: 7px;
@@ -337,8 +351,16 @@ nav a.active svg {
 }
 .main-shell {
   margin-left: 244px;
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+}
+.main-shell > main {
+  width: 100%;
+  flex: 1;
 }
 .topbar {
+  flex-shrink: 0;
   height: 71px;
   background: #fff;
   border-bottom: 1px solid var(--line);
@@ -1477,18 +1499,6 @@ dialog p {
   display: block;
   text-align: center;
 }
-footer {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 20px 40px;
-  border-top: 1px solid var(--line);
-  font-size: 9px;
-  color: #9ba38f;
-}
-footer span {
-  font-style: italic;
-}
 .mobile-menu,
 .mobile-close {
   display: none;
@@ -1896,14 +1906,6 @@ footer span {
   .login-form .section-icon {
     display: none;
   }
-  footer {
-    padding: 20px;
-    font-size: 8px;
-    gap: 15px;
-  }
-  footer span {
-    display: none;
-  }
   dialog {
     padding: 22px;
   }
@@ -1911,20 +1913,26 @@ footer span {
     display: none;
   }
 }
-.public-info-links {
+@media (max-height: 760px) {
+  .sidebar { padding-top: 20px; }
+  .nav-section { margin-top: 24px; }
+  #campus-navigation { gap: 3px; }
+  #campus-navigation a { padding-top: 10px; padding-bottom: 10px; }
+  .sidebar-note { display: none; }
+}
+.auth-shell {
+  min-height: 100dvh;
   display: flex;
-  flex-wrap: wrap;
-  gap: 10px 18px;
-  margin-top: 18px;
-  font-size: 12px;
+  flex-direction: column;
 }
-.public-info-links a {
-  color: var(--green);
-  text-decoration: underline;
-  text-underline-offset: 3px;
+.auth-shell > .login-page {
+  flex: 1;
+  min-height: calc(100dvh - 180px);
 }
-footer .public-info-links {
-  margin-top: 0;
+.auth-shell > .registration-page {
+  flex: 1;
+  min-height: 0;
+  width: 100%;
 }
 .registration-page {
   min-height: 100vh;

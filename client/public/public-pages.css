@@ -1,3 +1,4 @@
+@import url("/footer.css");
 :root { font-family: "Segoe UI", Arial, sans-serif; color: #273a32; background: #f6f7f3; line-height: 1.65; }
 * { box-sizing: border-box; }
 body { margin: 0; }
@@ -5,7 +6,7 @@ a { color: #285442; text-underline-offset: 4px; }
 a:focus-visible { outline: 3px solid #ac792b; outline-offset: 5px; }
 .skip-link { position: absolute; left: 20px; top: -80px; background: white; padding: 12px; }
 .skip-link:focus { top: 12px; z-index: 2; }
-.site-header, .site-footer { max-width: 1120px; margin: auto; padding: 24px; display: flex; align-items: center; justify-content: space-between; gap: 20px; }
+.site-header { max-width: 1120px; margin: auto; padding: 24px; display: flex; align-items: center; justify-content: space-between; gap: 20px; }
 .brand { font-family: Georgia, serif; font-size: 25px; font-weight: bold; text-decoration: none; }
 nav { display: flex; flex-wrap: wrap; align-items: center; gap: 20px; }
 nav a { font-size: 14px; }
@@ -31,7 +32,6 @@ p { margin: 0 0 18px; }
 .policy ul { padding-left: 22px; }
 .policy li { margin-bottom: 10px; }
 .contact { padding: 12px 0 24px; }
-.site-footer { border-top: 1px solid #dfe5d9; font-size: 13px; color: #657268; flex-wrap: wrap; }
 @media (max-width: 650px) {
   .site-header { align-items: flex-start; flex-direction: column; padding: 20px; }
   main { padding: 16px; }
@@ -39,7 +39,6 @@ p { margin: 0 0 18px; }
   .hero p:not(.eyebrow) { font-size: 16px; }
   .feature-grid { grid-template-columns: 1fr; }
   .policy { padding: 26px 22px; }
-  .site-footer { padding: 20px; }
   nav { gap: 14px; }
   a { overflow-wrap: anywhere; }
 }

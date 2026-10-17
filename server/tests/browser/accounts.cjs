@@ -32,7 +32,7 @@ async function main() {
       if (req.url.startsWith("/api/v1/")) return app(req, res);
       (async () => {
         const pathname = decodeURIComponent(new URL(req.url, "http://localhost").pathname);
-        const isStatic = pathname.startsWith("/assets/") || ["/about.html", "/privacy.html", "/terms.html", "/public-pages.css"].includes(pathname);
+        const isStatic = pathname.startsWith("/assets/") || ["/about.html", "/privacy.html", "/terms.html", "/public-pages.css", "/footer.css"].includes(pathname);
         const file = isStatic ? path.resolve(dist, `.${pathname}`) : path.join(dist, "index.html");
         assert(file.startsWith(dist + path.sep));
         const types = { ".js": "text/javascript", ".css": "text/css", ".png": "image/png", ".svg": "image/svg+xml", ".html": "text/html" };
@@ -119,6 +119,36 @@ async function main() {
     await page.getByRole("button", { name: "Sign out", exact: true }).click();
     await login("admin.browser@example.test");
     await page.getByRole("link", { name: "Manage accounts", exact: true }).click();
+    // All Admin links must remain reachable while the profile stays in view.
+    for (const viewport of [{ width: 1920, height: 900 }, { width: 1366, height: 650 }, { width: 1280, height: 600 }, { width: 1024, height: 480 }]) {
+      await page.setViewportSize(viewport);
+      const profile = page.getByRole("button", { name: "Open your profile", exact: true });
+      const bounds = await profile.boundingBox();
+      assert(bounds && bounds.y >= 0 && bounds.y + bounds.height <= viewport.height, `Profile clipped at ${viewport.width}x${viewport.height}`);
+      await profile.click();
+      await page.getByRole("dialog").waitFor();
+      await page.keyboard.press("Escape");
+      await page.locator("#campus-navigation").getByRole("link", { name: "Assign approvers", exact: true }).scrollIntoViewIfNeeded();
+      assert(await page.locator("#campus-navigation").getByRole("link", { name: "Assign approvers", exact: true }).isVisible());
+      await page.locator(".campus-footer").scrollIntoViewIfNeeded();
+      assert.equal(await page.locator(".campus-footer .public-info-links a").count(), 3);
+      assert.equal(await page.evaluate(() => document.documentElement.scrollWidth > innerWidth), false);
+      assert.equal(await page.locator(".campus-footer").evaluate(el => getComputedStyle(el).backgroundColor), "rgb(237, 241, 231)");
+    }
+    await page.setViewportSize({ width: 390, height: 600 });
+    await page.getByRole("button", { name: "Open navigation", exact: true }).click();
+    const mobileProfile = await page.locator(".profile-button").boundingBox();
+    assert(mobileProfile && mobileProfile.y + mobileProfile.height <= 600);
+    await page.locator(".profile-button").click();
+    await page.getByRole("dialog").waitFor();
+    await page.keyboard.press("Escape");
+    await page.getByRole("button", { name: "Close navigation", exact: true }).first().click();
+    await page.locator(".campus-footer").scrollIntoViewIfNeeded();
+    assert.equal(await page.evaluate(() => document.documentElement.scrollWidth > innerWidth), false);
+    await page.screenshot({ path: path.join(root, ".local/screenshots/footer-mobile.png"), fullPage: true });
+    await page.setViewportSize({ width: 1366, height: 650 });
+    await page.screenshot({ path: path.join(root, ".local/screenshots/admin-footer-desktop.png"), fullPage: true });
+    await page.getByRole("button", { name: "Add approver" }).scrollIntoViewIfNeeded();
     await page.getByRole("button", { name: "Add approver" }).click();
     const dialog = page.getByRole("dialog");
     await dialog.getByLabel("Name", { exact: true }).fill("Authority Browser");
@@ -141,8 +171,9 @@ async function main() {
     await login("authority@coeptech.ac.in", "Reset-browser-password-123");
     await page.getByRole("link", { name: "Pending requests", exact: true }).waitFor();
     assert.equal(await page.getByRole("link", { name: "Manage accounts", exact: true }).count(), 0);
+    await page.waitForLoadState("networkidle");
     assert.deepEqual(errors, []);
-    console.log("PASS: public homepage/privacy/terms work without JavaScript, authentication or API requests; desktop/mobile layout and existing signup/account-management workflows passed.");
+    console.log("PASS: public homepage/privacy/terms work without JavaScript, authentication or API requests; themed footers, Admin profile access at desktop/mobile sizes and existing signup/account-management workflows passed.");
   } catch (error) {
     if (page) {
       console.error("UI alerts:", await page.locator(".alert").allTextContents());

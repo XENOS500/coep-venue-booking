@@ -19,7 +19,7 @@ import {
 } from "lucide-react";
 import { useAuth } from "../context/AuthContext";
 import { Modal } from "./UI";
-import { PublicInfoLinks } from "./PublicInfoLinks";
+import { Footer } from "./Footer";
 export const navigation = [
   { to: "/admin/accounts", label: "Manage accounts", icon: UserRoundCheck, roles: ["ADMIN"] },
   { to: "/dashboard", label: "Overview", icon: LayoutDashboard },
@@ -97,16 +97,16 @@ export function Layout() {
         >
           <X />
         </button>
-        <p className="nav-section">WORKSPACE</p>
-        <nav id="campus-navigation" aria-label="Main navigation">
-          {links.map(({ icon: Icon, ...n }) => (
-            <NavLink key={n.to} to={n.to} onClick={() => setMenu(false)}>
-              <Icon size={19} />
-              {n.label}
-            </NavLink>
-          ))}
-        </nav>
-        <div className="sidebar-bottom">
+        <div className="sidebar-scroll">
+          <p className="nav-section">WORKSPACE</p>
+          <nav id="campus-navigation" aria-label="Main navigation">
+            {links.map(({ icon: Icon, ...n }) => (
+              <NavLink key={n.to} to={n.to} onClick={() => setMenu(false)}>
+                <Icon size={19} />
+                {n.label}
+              </NavLink>
+            ))}
+          </nav>
           <div className="sidebar-note">
             <span className="tiny-label">A SPACE FOR EVERY IDEA</span>
             <p>Bring your next campus event to life.</p>
@@ -114,7 +114,9 @@ export function Layout() {
               Explore venues <ArrowUpRight size={16} />
             </NavLink>
           </div>
-          <button className="profile-button" onClick={() => setProfile(true)}>
+        </div>
+        <div className="sidebar-bottom">
+          <button className="profile-button" aria-label="Open your profile" onClick={() => setProfile(true)}>
             <span className="avatar">{account.name.slice(0, 1)}</span>
             <span>
               <b>{account.name}</b>
@@ -155,11 +157,7 @@ export function Layout() {
         <main id="main" tabIndex={-1}>
           <Outlet />
         </main>
-        <footer>
-          COEP Technological University{" "}
-          <span>Thoughtfully shared. Seamlessly booked.</span>
-          <PublicInfoLinks />
-        </footer>
+        <Footer />
       </div>
       {profile && (
         <Modal title="Your profile" onClose={() => setProfile(false)}>

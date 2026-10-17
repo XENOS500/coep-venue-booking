@@ -3,7 +3,7 @@ import { Link, Navigate } from "react-router-dom";
 import { Building2, ArrowRight, LockKeyhole } from "lucide-react";
 import { useAuth } from "../context/AuthContext";
 import { Field, FormError } from "../components/UI";
-import { PublicInfoLinks } from "../components/PublicInfoLinks";
+import { Footer } from "../components/Footer";
 export function Login() {
   const { account, login } = useAuth(),
     [error, setError] = useState(null),
@@ -32,93 +32,95 @@ export function Login() {
     }
   }
   return (
-    <div className="login-page">
-      <section className="login-art">
-        <div className="brand">
-          <span className="brand-icon">
-            <Building2 />
-          </span>
-          <span>
-            COEP <b>Spaces</b>
-            <small>CAMPUS VENUE BOOKING</small>
-          </span>
-        </div>
-        <div className="login-message">
-          <p className="eyebrow">MAKE ROOM FOR WHAT’S NEXT</p>
-          <h1>
-            Great ideas
-            <br />
-            need a space
-            <br />
-            <i>to happen.</i>
-          </h1>
-          <p>
-            Find the right venue. Bring people together.
-            <br />
-            Make your next campus event a reality.
-          </p>
-        </div>
-        <div className="login-art-footer">
-          COEP Technological University <span>EST. 1854</span>
-        </div>
-      </section>
-      <section className="login-panel">
-        <div className="login-form">
-          <span className="section-icon">
-            <LockKeyhole size={23} />
-          </span>
-          <p className="eyebrow">YOUR CAMPUS, CONNECTED</p>
-          <h1>Welcome back.</h1>
-          <p className="muted">
-            Sign in with your institution-provisioned account.
-          </p>
-          <form onSubmit={submit}>
-            <Field label="Email address">
-              <input
-                name="email"
-                type="email"
-                placeholder="you@coeptech.ac.in"
-                autoComplete="username"
-                required
-                maxLength={254}
-              />
-            </Field>
-            <Field label="Password">
-              <input
-                name="password"
-                type="password"
-                placeholder="Enter your password"
-                autoComplete="current-password"
-                required
-                maxLength={128}
-              />
-            </Field>
-            <FormError error={error} />
-            {busy && slow && (
-              <p className="muted" role="status">
-                Connecting is taking longer than usual. Please keep this page
-                open while we sign you in.
-              </p>
-            )}
-            <button className="button" disabled={busy}>
-              {busy ? "Signing in…" : "Sign in to your workspace"}
-              <ArrowRight size={18} />
-            </button>
-          </form>
-          <p className="login-help">
-            <Link to="/register" className="text-link">Register as Requester</Link>
-            <br />
-            Need access or help signing in?
-            <br />
-            Contact your institution’s authorized administrator.
-          </p>
-          <small className="muted">
-            Your session is saved on this browser. Use Logout when you finish
-            on a shared device.
-          </small>
-          <PublicInfoLinks />
-        </div>
-      </section>
+    <div className="auth-shell">
+      <div className="login-page">
+        <section className="login-art">
+          <div className="brand">
+            <span className="brand-icon">
+              <Building2 />
+            </span>
+            <span>
+              COEP <b>Spaces</b>
+              <small>CAMPUS VENUE BOOKING</small>
+            </span>
+          </div>
+          <div className="login-message">
+            <p className="eyebrow">MAKE ROOM FOR WHAT’S NEXT</p>
+            <h1>
+              Great ideas
+              <br />
+              need a space
+              <br />
+              <i>to happen.</i>
+            </h1>
+            <p>
+              Find the right venue. Bring people together.
+              <br />
+              Make your next campus event a reality.
+            </p>
+          </div>
+          <div className="login-art-footer">
+            COEP Technological University <span>EST. 1854</span>
+          </div>
+        </section>
+        <section className="login-panel">
+          <div className="login-form">
+            <span className="section-icon">
+              <LockKeyhole size={23} />
+            </span>
+            <p className="eyebrow">YOUR CAMPUS, CONNECTED</p>
+            <h1>Welcome back.</h1>
+            <p className="muted">
+              Sign in with your institution-provisioned account.
+            </p>
+            <form onSubmit={submit}>
+              <Field label="Email address">
+                <input
+                  name="email"
+                  type="email"
+                  placeholder="you@coeptech.ac.in"
+                  autoComplete="username"
+                  required
+                  maxLength={254}
+                />
+              </Field>
+              <Field label="Password">
+                <input
+                  name="password"
+                  type="password"
+                  placeholder="Enter your password"
+                  autoComplete="current-password"
+                  required
+                  maxLength={128}
+                />
+              </Field>
+              <FormError error={error} />
+              {busy && slow && (
+                <p className="muted" role="status">
+                  Connecting is taking longer than usual. Please keep this page
+                  open while we sign you in.
+                </p>
+              )}
+              <button className="button" disabled={busy}>
+                {busy ? "Signing in…" : "Sign in to your workspace"}
+                <ArrowRight size={18} />
+              </button>
+            </form>
+            <p className="login-help">
+              <Link to="/register" className="text-link">Register as Requester</Link>
+              <br />
+              Need access or help signing in?
+              <br />
+              Contact your institution’s authorized administrator.
+            </p>
+            <small className="muted">
+              Your session is saved on this browser. Use Logout when you finish
+              on a shared device.
+            </small>
+          </div>
+        </section>
+      </div>
+      <Footer />
     </div>
   );
 }
