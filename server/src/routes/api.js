@@ -11,11 +11,14 @@ import { createRegistrationService } from "../services/registration.service.js";
 import * as v from "../validators/schemas.js";
 export function apiRouter(db, config, options = {}) {
   const router = Router(),
+    emailService = options.emailService || createEmailService(config),
     auth = createAuthService(db, config.JWT_SECRET),
-    bookings = createBookingService(db, options.clock),
+    bookings = createBookingService(db, options.clock, {
+      frontendOrigin: config.CLIENT_ORIGIN, onDecision: options.onDecision,
+    }),
     venues = createVenueService(db, options.clock),
     accounts = createAccountService(db),
-    registration = createRegistrationService(db, config.JWT_SECRET, options.emailService || createEmailService(config), options.clock);
+    registration = createRegistrationService(db, config.JWT_SECRET, emailService, options.clock);
   const id = (req) => v.parse(v.uuid, req.params.id);
   // A lightweight public liveness check keeps the API reachable without
   // waking Neon on every scheduled request. /health still checks the database.

@@ -81,3 +81,9 @@ The checked-in fixture is extracted from `coep_venues.xlsx`, sheet `in`, rows 2â
 One reusable navbar derives links from centralized role configuration; route guards complement server enforcement. Dashboard, catalog, details, availability, calendar and profile are shared. Requester, approver and administrator pages are guarded separately. Profile and venue editing use native modal dialogs. Calendar is loaded on demand. It displays IST wall-clock values in FullCalendar UTC mode to avoid relying on the browser timezone or introducing another timezone plugin. API timestamps remain UTC.
 
 Email OTP registration, Admin account management and Gmail API HTTPS delivery are implemented. Gmail tokens are refreshed server-side and cached until shortly before expiry. No email SDK is needed, and OAuth credentials never reach the browser. Automatic hold expiry, partial series editing and priority overrides remain out of scope.
+
+Approver decisions also create a durable `DecisionEmail` record inside the booking
+transaction. The server dispatches these to the booking contact email after commit,
+with lease-based claims, bounded retries and restart recovery. Its idle worker does
+not poll Neon. See [decision email operations](decision-emails.md) for deployment,
+delivery semantics and failure inspection.

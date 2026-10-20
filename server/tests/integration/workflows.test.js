@@ -6,6 +6,8 @@ import jwt from "jsonwebtoken";
 import { spawnSync } from "node:child_process";
 import { fileURLToPath } from "node:url";
 import { createApp } from "../../src/app.js";
+import { createBookingService } from "../../src/services/booking.service.js";
+import { createDecisionEmailWorker } from "../../src/services/decision-email.service.js";
 const connection = process.env.TEST_DATABASE_URL;
 const secret = "integration-test-secret-at-least-32-characters";
 test(
@@ -172,6 +174,83 @@ test(
         assert.equal((await create(id)).status, 201);
       },
     );
+    await t.test("decision emails commit once, retry delivery, survive restarts and never undo booking decisions", async () => {
+      const id = await venue();
+      const created = await create(id, { contactEmail: "decision-contact@yahoo.com", eventTitle: "Workshop — स्वागत" });
+      const bookingId = created.body.data.id;
+      const decision = () => request(`/bookings/${bookingId}/decision`, {
+        as: "approver", method: "POST", body: { decision: "APPROVED" },
+      });
+      const results = await Promise.all([decision(), decision()]);
+      assert.deepEqual(results.map(r => r.status).sort(), [200, 409]);
+      const queued = await db.decisionEmail.findMany({ where: { action: { bookingId } } });
+      assert.equal(queued.length, 1);
+      assert.equal(queued[0].status, "PENDING");
+      assert.equal(queued[0].recipient, "decision-contact@yahoo.com");
+      assert.match(queued[0].body, /Workshop — स्वागत/);
+      assert.match(queued[0].body, /Integration room/);
+      assert.match(queued[0].body, /17 Oct 2030: 10:00 am - 11:00 am/i);
+      assert.match(queued[0].body, new RegExp(`/bookings/${bookingId}`));
+      const rejectionVenue = await venue();
+      const rejectedId = (await create(rejectionVenue, { contactEmail: "retry@example.com" })).body.data.id;
+      const reject = await request(`/bookings/${rejectedId}/decision`, {
+        as: "approver", method: "POST", body: { decision: "REJECTED", reason: "Maintenance — कृपया दुसरी तारीख निवडा" },
+      });
+      assert.equal(reject.status, 200);
+      const rejection = await db.decisionEmail.findFirst({ where: { action: { bookingId: rejectedId } } });
+      assert.match(rejection.body, /Maintenance — कृपया दुसरी तारीख निवडा/);
+      const deliveries = [];
+      const logs = [];
+      let failDelivery = true;
+      let now = new Date("2030-10-16T03:30:00Z");
+      const email = { configured: true, sendNotification: async row => {
+        if (row.id === rejection.id && failDelivery) throw new Error("provider-secret-must-not-be-logged");
+        deliveries.push(row.id);
+      } };
+      const options = { clock: () => now, logger: { error: line => logs.push(line) } };
+      const workers = [createDecisionEmailWorker(db, email, options), createDecisionEmailWorker(db, email, options)];
+      await Promise.all(workers.map(worker => worker.wake()));
+      assert.equal(deliveries.filter(id => id === queued[0].id).length, 1);
+      assert.equal((await db.decisionEmail.findUnique({ where: { id: queued[0].id } })).status, "SENT");
+      const retry = await db.decisionEmail.findUnique({ where: { id: rejection.id } });
+      assert.equal(retry.status, "PENDING");
+      assert.equal(retry.attempts, 1);
+      assert.equal(retry.nextAttemptAt.toISOString(), "2030-10-16T03:31:00.000Z");
+      assert.equal((await db.booking.findUnique({ where: { id: rejectedId } })).status, "REJECTED");
+      assert.equal(logs.some(line => /provider-secret|retry@example.com/.test(line)), false);
+      await workers[0].wake();
+      assert.equal((await db.decisionEmail.findUnique({ where: { id: rejection.id } })).attempts, 1);
+      // A replacement process recovers an expired claim after a crash.
+      await db.decisionEmail.update({ where: { id: rejection.id }, data: { status: "SENDING", lockedAt: new Date("2030-10-16T03:20:00Z") } });
+      failDelivery = false;
+      await createDecisionEmailWorker(db, email, options).wake();
+      assert.equal(deliveries.filter(id => id === rejection.id).length, 1);
+      assert.equal((await db.decisionEmail.findUnique({ where: { id: rejection.id } })).attempts, 2);
+      // Exhausted deliveries remain visible for maintenance instead of looping forever.
+      await db.decisionEmail.update({ where: { id: rejection.id }, data: { status: "PENDING", attempts: 4, nextAttemptAt: now } });
+      failDelivery = true;
+      await workers[0].wake();
+      assert.equal((await db.decisionEmail.findUnique({ where: { id: rejection.id } })).status, "FAILED");
+      await db.decisionEmail.update({ where: { id: rejection.id }, data: { status: "PENDING", attempts: 0, nextAttemptAt: now } });
+      await createDecisionEmailWorker(db, { configured: false }, options).wake();
+      assert.equal((await db.decisionEmail.findUnique({ where: { id: rejection.id } })).attempts, 0);
+      failDelivery = false;
+      const startupWorker = createDecisionEmailWorker(db, email, options);
+      startupWorker.start();
+      await startupWorker.wake();
+      await startupWorker.stop();
+      assert.equal((await db.decisionEmail.findUnique({ where: { id: rejection.id } })).status, "SENT");
+      assert.equal((await request(`/bookings/${bookingId}/cancel`, { method: "POST", body: { reason: "Changed plans" } })).status, 200);
+      assert.equal(await db.decisionEmail.count({ where: { action: { bookingId } } }), 1);
+
+      const rollbackVenue = await venue();
+      const rollbackId = (await create(rollbackVenue)).body.data.id;
+      const failingDb = db.$extends({ query: { decisionEmail: { create() { throw new Error("Outbox unavailable"); } } } });
+      await assert.rejects(createBookingService(failingDb, () => now).transition(accounts.approver, rollbackId, { decision: "APPROVED" }), /Outbox unavailable/);
+      const unchanged = await db.booking.findUnique({ where: { id: rollbackId }, include: { actions: true } });
+      assert.equal(unchanged.status, "PENDING");
+      assert.equal(unchanged.actions.length, 1);
+    });
     await t.test(
       "role, assignment, ownership and calendar privacy are enforced",
       async () => {
