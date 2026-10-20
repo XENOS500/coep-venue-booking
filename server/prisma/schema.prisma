@@ -148,8 +148,27 @@ model BookingAction {
   createdAt DateTime @default(now()) @db.Timestamptz(3)
   booking   Booking  @relation(fields: [bookingId], references: [id], onDelete: Restrict)
   actor     Account  @relation(fields: [actorId], references: [id], onDelete: Restrict)
+  notification DecisionEmail?
 
   @@index([bookingId, createdAt])
+}
+
+model DecisionEmail {
+  id            String   @id @default(uuid()) @db.Uuid
+  actionId      String   @unique @db.Uuid
+  recipient     String   @db.VarChar(254)
+  subject       String   @db.VarChar(200)
+  body          String
+  status        String   @default("PENDING") @db.VarChar(16)
+  attempts      Int      @default(0)
+  nextAttemptAt DateTime @default(now()) @db.Timestamptz(3)
+  lockedAt      DateTime? @db.Timestamptz(3)
+  sentAt        DateTime? @db.Timestamptz(3)
+  lastErrorCode String?  @db.VarChar(64)
+  createdAt     DateTime @default(now()) @db.Timestamptz(3)
+  action        BookingAction @relation(fields: [actionId], references: [id], onDelete: Restrict)
+
+  @@index([status, nextAttemptAt])
 }
 
 model AuditEvent {

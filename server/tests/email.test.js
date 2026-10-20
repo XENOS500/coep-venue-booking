@@ -79,3 +79,24 @@ test("expired or revoked refresh tokens prevent sending and header injection is 
   await assert.rejects(email.sendOtp({ email: "student@gmail.com\r\nBcc: other@gmail.com", code: "123456" }), error => error.code === "EMAIL_DELIVERY_FAILED");
   assert.equal(calls, 1);
 });
+
+test("booking notifications preserve Unicode and use a stable message ID without leaking credentials", async () => {
+  const calls = [];
+  const service = createEmailService(config, async (url, options) => {
+    if (url.includes("oauth2")) return { ok: true, json: async () => ({ access_token: "token", expires_in: 3600 }) };
+    calls.push(options);
+    return { ok: true };
+  });
+  const notification = {
+    id: "12345678-1234-1234-1234-123456789012", recipient: "contact@yahoo.com",
+    subject: "COEP Spaces: booking rejected", body: "नमस्कार — Booking rejected.\nReason: venue unavailable.",
+  };
+  await service.sendNotification(notification);
+  const mime = Buffer.from(JSON.parse(calls[0].body).raw, "base64url").toString("utf8");
+  assert.match(mime, /To: contact@yahoo.com\r\n/);
+  assert.match(mime, /Subject: COEP Spaces: booking rejected/);
+  assert.match(mime, /Message-ID: <decision-12345678-1234-1234-1234-123456789012@gmail.com>/);
+  assert.equal(Buffer.from(mime.split("\r\n\r\n")[1], "base64").toString("utf8"), notification.body);
+  await assert.rejects(service.sendNotification({ ...notification, recipient: "a@gmail.com\r\nBcc: bad@gmail.com" }), e => e.code === "EMAIL_DELIVERY_FAILED");
+  assert.equal(calls.length, 1);
+});

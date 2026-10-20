@@ -14,24 +14,25 @@
     <article class="policy">
       <p class="eyebrow">Your information</p>
       <h1>Privacy policy</h1>
-      <p class="meta">Effective date: 17 October 2026</p>
+      <p class="meta">Effective date: 20 October 2026</p>
       <p>COEP Spaces is a campus venue booking application. This policy explains the information used to create accounts, verify email addresses, manage venue requests and provide account support. The application maintainer can be contacted at <a href="mailto:pareekayush500@gmail.com">pareekayush500@gmail.com</a>.</p>
       <h2>Information we collect</h2>
       <ul>
         <li><strong>Accounts:</strong> name, email address, account role, active status, password hash and account timestamps. Verified self-registration also records when email verification completed.</li>
         <li><strong>Email verification:</strong> pending registration details, a protected representation of the verification code, its expiry, and attempt and resend counters. Passwords are hashed before pending registration is stored.</li>
         <li><strong>Bookings:</strong> event title and type, contact name, email and phone number, guest count, event details, purpose, venue and schedule, booking status, and decisions or cancellation reasons.</li>
+        <li><strong>Decision emails:</strong> the booking contact address, notification subject and message, delivery status, attempt count and timestamps are stored to send and retry approval or rejection notifications.</li>
         <li><strong>Operational records:</strong> account and venue changes, Approver assignments and booking actions, including the responsible account and timestamps. Hosting services may also process IP addresses and request metadata for operation and security.</li>
       </ul>
       <h2>How information is used</h2>
       <p>We use this information to verify email ownership, authenticate users, apply role permissions, check venue availability, prevent conflicting reservations, review requests, preserve booking history and investigate support or security issues.</p>
       <h2>Gmail API and Google user data</h2>
-      <p>The authorized application sender grants the Gmail API permission <code>gmail.send</code>. The backend uses that permission only to send account verification messages containing the recipient address and verification code. It does not request access to read the sender's inbox, retrieve contacts, or access the recipient's Google account.</p>
+      <p>The authorized application sender grants the Gmail API permission <code>gmail.send</code>. The backend uses that permission to send account verification messages and booking decision notifications. Decision notifications go to the booking's contact email and include the event title, venue, schedule, booking reference, decision and any approver reason. Enter a contact address authorized to receive those details. The application does not request access to read the sender's inbox, retrieve contacts, or access the recipient's Google account.</p>
       <p>The sender's OAuth client credentials and refresh token are kept in the backend environment. Short-lived access tokens are held in backend memory. Google processes the recipient address and message content to deliver the email; messages may also remain in the sender's Gmail Sent folder under that account's controls.</p>
-      <p>Google API data is used only for this verification-email feature. It is not sold or used for advertising, profiling, or training general-purpose AI models. Our use of Google API information follows the <a href="https://developers.google.com/terms/api-services-user-data-policy" target="_blank" rel="noreferrer">Google API Services User Data Policy</a>, including its Limited Use requirements.</p>
+      <p>Google API data is used only for account verification and booking decision emails. It is not sold or used for advertising, profiling, or training general-purpose AI models. Our use of Google API information follows the <a href="https://developers.google.com/terms/api-services-user-data-policy" target="_blank" rel="noreferrer">Google API Services User Data Policy</a>, including its Limited Use requirements.</p>
       <h2>Who can access information</h2>
       <p>Requesters can access their own booking details. Approvers can review private requests for their currently assigned venues. The Admin manages accounts, venues and assignments. Shared availability and calendar views limit the information shown according to the signed-in user's permissions.</p>
-      <p>Vercel hosts the frontend, Render runs the backend, Neon stores application records, and Google Gmail delivers verification emails. These providers process information needed for their respective services. The application does not integrate advertising or marketing analytics. Venue photos that use external source links can cause your browser to contact those image providers.</p>
+      <p>Vercel hosts the frontend, Render runs the backend, Neon stores application records, and Google Gmail delivers verification and booking decision emails. These providers process information needed for their respective services. The application does not integrate advertising or marketing analytics. Venue photos that use external source links can cause your browser to contact those image providers.</p>
       <h2>Browser storage and security</h2>
       <p>Your browser stores your authentication token and basic account details in localStorage so a refresh can restore your session. Logout removes this saved session. Tokens expire after two hours and account changes can revoke them earlier. Use Logout when using a shared device.</p>
       <p>Passwords are stored as bcrypt hashes and verification codes are protected on the backend. The application avoids logging passwords, OTPs and Google OAuth credentials. Keep your credentials private and report suspected unauthorized access to the maintainer.</p>

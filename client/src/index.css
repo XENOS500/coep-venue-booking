@@ -1482,6 +1482,21 @@ dialog p {
 .login-form form {
   margin-top: 30px;
 }
+.password-control {
+  position: relative;
+}
+.password-control input {
+  padding-right: 52px;
+}
+.password-control .password-toggle {
+  position: absolute;
+  right: 5px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 40px;
+  height: 36px;
+  color: var(--green);
+}
 .login-form .button {
   width: 100%;
   justify-content: space-between;

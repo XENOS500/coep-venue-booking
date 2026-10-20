@@ -87,6 +87,23 @@ async function main() {
       assert.equal(publicApiRequests, 0);
     } finally { await publicContext.close(); }
     await page.goto(`${base}/login`);
+    const passwordInput = page.getByLabel("Password", { exact: true });
+    await passwordInput.fill("Toggle-test-password");
+    assert.equal(await passwordInput.getAttribute("type"), "password");
+    await page.getByRole("button", { name: "Show password", exact: true }).click();
+    assert.equal(await passwordInput.getAttribute("type"), "text");
+    assert.equal(await passwordInput.inputValue(), "Toggle-test-password");
+    await page.getByRole("button", { name: "Hide password", exact: true }).press("Enter");
+    assert.equal(await passwordInput.getAttribute("type"), "password");
+    assert.equal(await passwordInput.inputValue(), "Toggle-test-password");
+    assert.equal(new URL(page.url()).pathname, "/login");
+    await page.setViewportSize({ width: 390, height: 844 });
+    await page.getByRole("button", { name: "Show password", exact: true }).click();
+    assert.equal(await passwordInput.getAttribute("type"), "text");
+    assert.equal(await page.evaluate(() => document.documentElement.scrollWidth > innerWidth), false);
+    await page.getByRole("button", { name: "Hide password", exact: true }).click();
+    await page.screenshot({ path: path.join(root, ".local/screenshots/login-password-mobile.png"), fullPage: true });
+    await page.setViewportSize({ width: 1280, height: 900 });
     assert.equal(await page.getByRole("link", { name: "Privacy policy", exact: true }).getAttribute("href"), "/privacy.html");
     await page.getByRole("link", { name: "Register as Requester" }).click();
     await page.getByLabel("Your name").fill("Student Browser");

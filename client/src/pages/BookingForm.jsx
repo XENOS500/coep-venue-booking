@@ -224,7 +224,7 @@ export function BookingForm({ availabilityOnly = false }) {
                     />
                   </Field>
                   <div className="form-grid">
-                    <Field label="Contact email">
+                    <Field label="Contact email" hint="Approval and rejection emails will be sent to this address.">
                       <input
                         name="contactEmail"
                         type="email"

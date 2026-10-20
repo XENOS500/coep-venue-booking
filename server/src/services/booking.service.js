@@ -1,4 +1,5 @@
 import { fail } from "../utils/errors.js";
+import { decisionMessage } from "./decision-email.service.js";
 import {
   ACTIVE_STATUSES,
   generateOccurrences,
@@ -68,7 +69,9 @@ export function bookingScope(account) {
     "Administrators can view operational occupancy in the calendar.",
   );
 }
-export function createBookingService(db, clock = () => new Date()) {
+export function createBookingService(db, clock = () => new Date(), {
+  frontendOrigin = "http://127.0.0.1:5173", onDecision,
+} = {}) {
   return {
     async availability(input) {
       const occurrences = generateOccurrences(input, clock());
@@ -144,7 +147,7 @@ export function createBookingService(db, clock = () => new Date()) {
         select: { venueId: true },
       });
       if (!initial) fail(404, "NOT_FOUND", "Booking not found.");
-      return db.$transaction(
+      const result = await db.$transaction(
         async (tx) => {
           const venue = await lockVenue(tx, initial.venueId);
           await currentActor(tx, account, cancel ? "REQUESTER" : "APPROVER");
@@ -189,7 +192,7 @@ export function createBookingService(db, clock = () => new Date()) {
             );
           }
           const status = cancel ? "CANCELLED" : input.decision;
-          return tx.booking.update({
+          const updated = await tx.booking.update({
             where: { id },
             data: {
               status,
@@ -203,9 +206,21 @@ export function createBookingService(db, clock = () => new Date()) {
             },
             include: bookingInclude,
           });
+          if (!cancel) {
+            const action = updated.actions.find(entry => entry.action === status);
+            await tx.decisionEmail.create({ data: {
+              actionId: action.id,
+              ...decisionMessage(updated, input.reason, frontendOrigin),
+              nextAttemptAt: clock(),
+            } });
+          }
+          return updated;
         },
         { maxWait: 10000, timeout: 15000 },
       );
+      // Wake only after the transaction commits; delivery cannot undo a decision.
+      if (!cancel) onDecision?.();
+      return result;
     },
     async calendar(account, { from, to }) {
       const start = new Date(`${from}T00:00:00+05:30`),

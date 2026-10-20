@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link, Navigate } from "react-router-dom";
-import { Building2, ArrowRight, LockKeyhole } from "lucide-react";
+import { Building2, ArrowRight, LockKeyhole, Eye, EyeOff } from "lucide-react";
 import { useAuth } from "../context/AuthContext";
 import { Field, FormError } from "../components/UI";
 import { Footer } from "../components/Footer";
@@ -8,7 +8,8 @@ export function Login() {
   const { account, login } = useAuth(),
     [error, setError] = useState(null),
     [busy, setBusy] = useState(false),
-    [slow, setSlow] = useState(false);
+    [slow, setSlow] = useState(false),
+    [showPassword, setShowPassword] = useState(false);
   useEffect(() => {
     if (!busy) {
       setSlow(false);
@@ -84,16 +85,30 @@ export function Login() {
                   maxLength={254}
                 />
               </Field>
-              <Field label="Password">
-                <input
+              <div className="field">
+                <label htmlFor="login-password">Password</label>
+                <div className="password-control">
+                  <input
+                  id="login-password"
                   name="password"
-                  type="password"
+                  type={showPassword ? "text" : "password"}
                   placeholder="Enter your password"
                   autoComplete="current-password"
                   required
                   maxLength={128}
-                />
-              </Field>
+                  />
+                  <button
+                    type="button"
+                    className="password-toggle icon-button"
+                    aria-label={showPassword ? "Hide password" : "Show password"}
+                    aria-controls="login-password"
+                    aria-pressed={showPassword}
+                    onClick={() => setShowPassword(value => !value)}
+                  >
+                    {showPassword ? <EyeOff size={19} aria-hidden="true" /> : <Eye size={19} aria-hidden="true" />}
+                  </button>
+                </div>
+              </div>
               <FormError error={error} />
               {busy && slow && (
                 <p className="muted" role="status">
