@@ -86,7 +86,51 @@ async function main() {
       await publicPage.screenshot({ path: path.join(root, ".local/screenshots/public-privacy-mobile.png") });
       assert.equal(publicApiRequests, 0);
     } finally { await publicContext.close(); }
-    await page.goto(`${base}/login`);
+    let homepageApiRequests = 0;
+    const observeHomepage = request => { if (new URL(request.url()).pathname.startsWith("/api/")) homepageApiRequests++; };
+    page.on("request", observeHomepage);
+    await page.goto(base);
+    await page.getByRole("heading", { level: 1, name: "Big ideas. Better spaces." }).waitFor();
+    assert.equal(new URL(page.url()).pathname, "/");
+    assert.equal(await page.title(), "COEP Spaces | Find your campus space");
+    await page.getByRole("link", { name: "Explore the venue catalog" }).scrollIntoViewIfNeeded();
+    for (const photo of await page.locator(".landing-page img").all()) {
+      await photo.scrollIntoViewIfNeeded();
+      await photo.evaluate(image => image.decode());
+      assert(await photo.evaluate(image => image.naturalWidth > 0));
+    }
+    for (const width of [320, 390, 768, 1024, 1440]) {
+      await page.setViewportSize({ width, height: 900 });
+      assert.equal(await page.evaluate(() => document.documentElement.scrollWidth > innerWidth), false, `Homepage overflows at ${width}px`);
+    }
+    await page.setViewportSize({ width: 1440, height: 960 });
+    assert.equal(await page.getByRole("button", { name: "Open menu", exact: true }).isVisible(), false);
+    await page.evaluate(() => window.scrollTo(0, 0));
+    await page.screenshot({ path: path.join(root, ".local/screenshots/home-desktop.png") });
+    await page.screenshot({ path: path.join(root, ".local/screenshots/home-desktop-full.png"), fullPage: true });
+    await page.locator(".landing-faq summary").filter({ hasText: "Do I need an account to book a venue?" }).click();
+    assert.equal(await page.locator(".landing-faq details").first().getAttribute("open"), "");
+    await page.setViewportSize({ width: 390, height: 844 });
+    await page.getByRole("button", { name: "Open menu", exact: true }).click();
+    await page.locator("#home-navigation").getByRole("link", { name: "How it works", exact: true }).click();
+    assert.equal(new URL(page.url()).hash, "#how-it-works");
+    assert.equal(await page.getByRole("button", { name: "Open menu", exact: true }).getAttribute("aria-expanded"), "false");
+    await page.getByRole("button", { name: "Open menu", exact: true }).click();
+    await page.keyboard.press("Escape");
+    assert.equal(await page.getByRole("button", { name: "Open menu", exact: true }).getAttribute("aria-expanded"), "false");
+    await page.locator(".landing-brand").click();
+    await page.evaluate(() => window.scrollTo(0, 0));
+    await page.screenshot({ path: path.join(root, ".local/screenshots/home-mobile.png") });
+    await page.locator(".landing-final").getByRole("link", { name: "Create a requester account" }).click();
+    await page.waitForURL("**/register");
+    await page.goto(base);
+    await page.reload();
+    await page.getByRole("heading", { level: 1, name: "Big ideas. Better spaces." }).waitFor();
+    await page.getByRole("link", { name: "Find your space", exact: true }).click();
+    await page.waitForURL("**/login");
+    assert.equal(homepageApiRequests, 0, "Public homepage must not depend on the backend");
+    page.off("request", observeHomepage);
+    await page.setViewportSize({ width: 1280, height: 900 });
     const passwordInput = page.getByLabel("Password", { exact: true });
     await passwordInput.fill("Toggle-test-password");
     assert.equal(await passwordInput.getAttribute("type"), "password");
@@ -129,6 +173,14 @@ async function main() {
       await page.waitForURL("**/dashboard");
     }
     await login("student@gmail.com");
+    await page.goto(base);
+    await page.locator(".landing-header-actions").getByRole("link", { name: "Overview", exact: true }).waitFor();
+    assert.equal(await page.getByRole("link", { name: "Find your space", exact: true }).getAttribute("href"), "/venues");
+    assert.equal(await page.getByRole("link", { name: "Get started", exact: true }).count(), 0);
+    await page.setViewportSize({ width: 320, height: 700 });
+    assert.equal(await page.evaluate(() => document.documentElement.scrollWidth > innerWidth), false);
+    await page.locator(".landing-header-actions").getByRole("link", { name: "Overview", exact: true }).click();
+    await page.waitForURL("**/dashboard");
     await page.setViewportSize({ width: 1280, height: 900 });
     await page.getByRole("link", { name: "New booking", exact: true }).waitFor();
     assert.equal(await page.getByRole("link", { name: "Manage accounts", exact: true }).count(), 0);
@@ -190,7 +242,7 @@ async function main() {
     assert.equal(await page.getByRole("link", { name: "Manage accounts", exact: true }).count(), 0);
     await page.waitForLoadState("networkidle");
     assert.deepEqual(errors, []);
-    console.log("PASS: public homepage/privacy/terms work without JavaScript, authentication or API requests; themed footers, Admin profile access at desktop/mobile sizes and existing signup/account-management workflows passed.");
+    console.log("PASS: public homepage photos, navigation, FAQs, responsive layouts and signed-in links work without API calls; static About/privacy/terms work without JavaScript; login, signup and account-management workflows passed.");
   } catch (error) {
     if (page) {
       console.error("UI alerts:", await page.locator(".alert").allTextContents());

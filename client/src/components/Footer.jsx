@@ -7,7 +7,7 @@ export function Footer() {
       <div className="campus-footer-inner">
         <div className="campus-footer-top">
           <div>
-            <a className="footer-brand" href="/about.html">
+            <a className="footer-brand" href="/">
               <Building2 size={23} aria-hidden="true" />
               <span>COEP <strong>Spaces</strong></span>
             </a>
