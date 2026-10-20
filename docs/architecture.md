@@ -78,6 +78,15 @@ The checked-in fixture is extracted from `coep_venues.xlsx`, sheet `in`, rows 2â
 
 ## Frontend
 
+The public `/` route introduces COEP Spaces with bundled venue photos, booking
+steps, role descriptions, FAQs and sign-in/registration links. It makes no API
+requests and exposes no booking records or live availability. Preview venue names
+and locations are illustrative catalog snapshots; signed-in users use `/venues`
+for current information. `/dashboard` remains the authenticated Overview and
+successful logins continue there. A signed-in homepage visitor gets workspace
+links instead of registration prompts. Static About, Privacy and Terms pages keep
+their existing URLs for public access and OAuth branding configuration.
+
 One reusable navbar derives links from centralized role configuration; route guards complement server enforcement. Dashboard, catalog, details, availability, calendar and profile are shared. Requester, approver and administrator pages are guarded separately. Profile and venue editing use native modal dialogs. Calendar is loaded on demand. It displays IST wall-clock values in FullCalendar UTC mode to avoid relying on the browser timezone or introducing another timezone plugin. API timestamps remain UTC.
 
 Email OTP registration, Admin account management and Gmail API HTTPS delivery are implemented. Gmail tokens are refreshed server-side and cached until shortly before expiry. No email SDK is needed, and OAuth credentials never reach the browser. Automatic hold expiry, partial series editing and priority overrides remain out of scope.

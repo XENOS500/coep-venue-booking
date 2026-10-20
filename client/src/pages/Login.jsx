@@ -36,7 +36,7 @@ export function Login() {
     <div className="auth-shell">
       <div className="login-page">
         <section className="login-art">
-          <div className="brand">
+          <Link className="brand" to="/" aria-label="COEP Spaces home">
             <span className="brand-icon">
               <Building2 />
             </span>
@@ -44,7 +44,7 @@ export function Login() {
               COEP <b>Spaces</b>
               <small>CAMPUS VENUE BOOKING</small>
             </span>
-          </div>
+          </Link>
           <div className="login-message">
             <p className="eyebrow">MAKE ROOM FOR WHAT’S NEXT</p>
             <h1>

@@ -2,6 +2,7 @@ import { Navigate, Outlet, Route, Routes, Link } from "react-router-dom";
 import { useAuth } from "./context/AuthContext";
 import { Layout } from "./components/Layout";
 import { Login } from "./pages/Login";
+import { Home } from "./pages/Home";
 import { Register } from "./pages/Register";
 import { ManageAccounts } from "./pages/Accounts";
 import { Dashboard } from "./pages/Dashboard";
@@ -39,11 +40,11 @@ function Guard({ roles }) {
 export default function App() {
   return (
     <Routes>
+      <Route path="/" element={<Home />} />
       <Route path="/login" element={<Login />} />
       <Route path="/register" element={<Register />} />
       <Route element={<Guard />}>
         <Route element={<Layout />}>
-          <Route index element={<Navigate to="/dashboard" replace />} />
           <Route path="dashboard" element={<Dashboard />} />
           <Route path="venues" element={<Catalog />} />
           <Route path="venues/:id" element={<VenueDetails />} />
